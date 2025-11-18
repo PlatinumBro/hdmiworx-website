@@ -4,133 +4,652 @@
   <meta charset="UTF-8" />
   <title>HDMIWORX Educación – Hablando Directo · Maestros Internacionales</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="HDMIWORX Educación conecta a alumnos en México y Estados Unidos con maestros internacionales, conversación con nativos y servicios de traducción en tiempo real." />
   <style>
+    :root {
+      --primary: #0c2340;      /* deep navy */
+      --accent: #e3342f;       /* red */
+      --background: #f5f5f8;
+      --text: #222;
+      --muted: #666;
+      --radius: 12px;
+      --shadow: 0 14px 30px rgba(0,0,0,0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-      margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.5;
-      color: #222;
-      background: #f5f6fa;
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.6;
     }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.75rem 1.25rem 3rem;
+    }
+
+    /* HEADER / NAV */
     header {
-      background: #1a5aff;
-      color: #fff;
-      padding: 1.5rem 1rem;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 2rem;
     }
-    header h1 {
-      margin: 0;
-      font-size: 1.9rem;
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
     }
-    header h2 {
-      margin: 0.25rem 0 0;
-      font-weight: 400;
-      font-size: 1rem;
-      opacity: 0.9;
-    }
-    main {
-      max-width: 900px;
-      margin: 1.5rem auto 3rem;
-      padding: 0 1rem;
-    }
-    section {
+
+    .logo-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      border: 2px solid var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.8rem;
+      color: var(--primary);
       background: #fff;
-      margin-bottom: 1rem;
-      padding: 1.25rem 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
     }
-    h3 {
-      margin-top: 0;
-      color: #1a5aff;
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
     }
-    .hero-title {
-      font-size: 1.4rem;
+
+    .brand-text span:first-child {
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      color: var(--primary);
+    }
+
+    .brand-text span:last-child {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      font-size: 0.86rem;
+    }
+
+    .nav-links a {
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+    }
+
+    .nav-links a:hover {
+      border-color: rgba(12,35,64,0.15);
+      background: rgba(255,255,255,0.7);
+    }
+
+    .language-toggle {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .language-toggle strong {
+      color: var(--primary);
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+      gap: 2rem;
+      align-items: center;
+      margin-bottom: 2.75rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.22rem 0.75rem;
+      font-size: 0.75rem;
+      border-radius: 999px;
+      background: rgba(227,52,47,0.07);
+      color: var(--accent);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.7rem;
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .hero h1 {
+      font-size: clamp(1.9rem, 3vw, 2.4rem);
+      line-height: 1.1;
+      margin-bottom: 0.8rem;
+      color: var(--primary);
+    }
+
+    .hero h1 span.highlight {
+      color: var(--accent);
+    }
+
+    .hero-subtitle {
+      font-size: 0.98rem;
+      color: var(--muted);
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-list {
+      font-size: 0.9rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-list li {
+      margin-left: 1.1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.65rem 1.2rem;
+      border-radius: 999px;
+      border: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.08s ease, box-shadow 0.12s ease, background 0.12s ease;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 35px rgba(227,52,47,0.25);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border: 1px solid rgba(12,35,64,0.2);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.9);
+    }
+
+    .hero-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .hero-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 1.3rem 1.3rem 1.2rem;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(12,35,64,0.03);
+    }
+
+    .hero-card-title {
+      font-weight: 700;
+      font-size: 0.92rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-card-sub {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 0.7rem;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
       margin-bottom: 0.75rem;
     }
-    ul {
-      padding-left: 1.2rem;
-    }
-    .btn {
-      display: inline-block;
-      padding: 0.7rem 1.2rem;
+
+    .pill {
+      font-size: 0.78rem;
+      padding: 0.18rem 0.55rem;
       border-radius: 999px;
-      text-decoration: none;
-      font-weight: 600;
-      background: #ffb547;
-      color: #222;
+      border: 1px solid rgba(12,35,64,0.16);
+      background: rgba(248,249,252,0.9);
+    }
+
+    .teachers {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 0.7rem;
       margin-top: 0.75rem;
+      font-size: 0.78rem;
     }
-    .btn:hover {
-      filter: brightness(0.95);
+
+    .teacher-chip {
+      padding: 0.5rem;
+      border-radius: 10px;
+      background: rgba(12,35,64,0.03);
     }
-    footer {
-      text-align: center;
-      padding: 1.5rem 0 2rem;
+
+    .teacher-chip strong {
+      display: block;
+      font-size: 0.82rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .teacher-chip span {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    /* SECTIONS */
+
+    section {
+      margin-bottom: 2.6rem;
+    }
+
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.3rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 1.2rem;
+    }
+
+    .levels-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+
+    .level-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 1rem 1rem 0.9rem;
+      box-shadow: 0 10px 22px rgba(0,0,0,0.03);
+      border: 1px solid rgba(12,35,64,0.05);
+    }
+
+    .level-name {
+      font-weight: 700;
+      font-size: 0.96rem;
+      margin-bottom: 0.4rem;
+      color: var(--primary);
+    }
+
+    .level-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .level-list {
+      font-size: 0.78rem;
+    }
+
+    .level-list li {
+      margin-left: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.4fr);
+      gap: 1.4rem;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 1.1rem 1.1rem 1rem;
+      box-shadow: 0 10px 22px rgba(0,0,0,0.03);
+      border: 1px solid rgba(12,35,64,0.05);
+      font-size: 0.9rem;
+    }
+
+    .card h3 {
+      font-size: 0.98rem;
+      color: var(--primary);
+      margin-bottom: 0.4rem;
+    }
+
+    .card p {
+      font-size: 0.84rem;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .card ul {
+      font-size: 0.8rem;
+    }
+
+    .card li {
+      margin-left: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
       font-size: 0.85rem;
-      color: #666;
+      margin-top: 0.6rem;
+    }
+
+    .contact-row span {
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(12,35,64,0.1);
+      background: #fff;
+    }
+
+    footer {
+      margin-top: 2.7rem;
+      padding-top: 1.3rem;
+      border-top: 1px solid rgba(12,35,64,0.08);
+      font-size: 0.78rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+    }
+
+    footer a {
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      text-underline-offset: 2px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 800px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links {
+        justify-content: flex-start;
+      }
+      .hero {
+        grid-template-columns: minmax(0,1fr);
+      }
+      .hero-card {
+        order: -1;
+      }
+      .teachers {
+        grid-template-columns: minmax(0,1fr);
+      }
+      .two-col {
+        grid-template-columns: minmax(0,1fr);
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>HDMIWORX Educación</h1>
-    <h2>Hablando Directo · Maestros Internacionales</h2>
-    <p style="margin-top:0.5rem;">The Business Bridge Between Mexico & the United States</p>
-  </header>
+  <div class="page">
+    <header>
+      <div class="brand">
+        <div class="logo-mark">
+          <span>HD</span>
+        </div>
+        <div class="brand-text">
+          <span>HDMIWORX EDUCACIÓN</span>
+          <span>Hablando directo · Maestros internacionales</span>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#programs">Programas</a>
+        <a href="#conversation">Conversación nativa</a>
+        <a href="#translation">Traducción</a>
+        <a href="#contact">Contacto</a>
+        <span class="language-toggle"><strong>ES</strong> / EN</span>
+      </nav>
+    </header>
 
-  <main>
-    <section>
-      <p class="hero-title">
-        Bilingual business English, real-time translation, and cross-border communication training for
-        professionals in Mexico and the United States.
-      </p>
-      <p>
-        Together with Teacher Sergio, Teacher Daniel, and Teacher Yesenia, HDMIWORX Educación helps you speak
-        confidently with clients, colleagues, and partners on both sides of the border.
-      </p>
-      <!-- TODO: replace this link with your real Bookings URL -->
-      <a class="btn" href="#" target="_blank">Book a placement call</a>
-    </section>
+    <!-- HERO -->
+    <main>
+      <section class="hero">
+        <div>
+          <div class="badge">
+            <span class="badge-dot"></span>
+            Inglés real para negocios reales
+          </div>
+          <h1>
+            Inglés conversacional y<br />
+            negocios <span class="highlight">México–Estados Unidos</span>
+          </h1>
+          <p class="hero-subtitle">
+            HDMIWORX Educación conecta a alumnos de Mexicali, Utah y más allá
+            con maestros internacionales, conversación con nativos y soporte
+            de traducción en tiempo real.
+          </p>
+          <ul class="hero-list">
+            <li>Metodología probada de <strong>Teacher Sergio</strong></li>
+            <li>Exámenes finales con <strong>Teacher Daniel</strong> (nativo inglés)</li>
+            <li>Traducción simultánea y coaching cultural con <strong>Yesenia</strong></li>
+          </ul>
+          <div class="hero-cta">
+            <!-- Replace these hrefs with your real links (Calendly, Teams, WhatsApp, etc.) -->
+            <a href="#contact" class="btn btn-primary">Agenda tu sesión</a>
+            <a href="mailto:info@hdmiworx.com" class="btn btn-outline">Escríbenos · info@hdmiworx.com</a>
+          </div>
+          <p class="hero-meta">
+            Clases en línea · grupos pequeños y sesiones 1 a 1 · enfoque 100% conversacional.
+          </p>
+        </div>
 
-    <section>
-      <h3>Programs</h3>
-      <ul>
-        <li><strong>Professional Bridge</strong> – Weekly group classes focused on real business situations.</li>
-        <li><strong>Executive Bridge</strong> – 1:1 coaching with a native speaker + translation support.</li>
-        <li><strong>Corporate Bridge</strong> – Customized bilingual training and interpretation for teams.</li>
-      </ul>
-    </section>
+        <aside class="hero-card">
+          <div class="hero-card-title">Puente bilingüe para tu carrera</div>
+          <div class="hero-card-sub">
+            Diseñado para profesionistas que necesitan moverse con confianza
+            entre reuniones, correos y negociaciones en inglés y español.
+          </div>
+          <div class="pill-row">
+            <span class="pill">Inglés general</span>
+            <span class="pill">Business English</span>
+            <span class="pill">Preparación entrevistas</span>
+            <span class="pill">Traducción en vivo</span>
+          </div>
+          <div class="teachers">
+            <div class="teacher-chip">
+              <strong>Teacher Sergio</strong>
+              <span>28+ años de experiencia · creador del programa</span>
+            </div>
+            <div class="teacher-chip">
+              <strong>Teacher Daniel</strong>
+              <span>Native English Speaker · conversación y coaching ejecutivo</span>
+            </div>
+            <div class="teacher-chip">
+              <strong>Yesenia</strong>
+              <span>Traducción inglés–español en tiempo real · contexto cultural</span>
+            </div>
+          </div>
+        </aside>
+      </section>
 
-    <section>
-      <h3>Your Team</h3>
-      <p><strong>Teacher Sergio Zamano Zamora</strong> – Lead instructor and curriculum director in Mexicali.</p>
-      <p><strong>Teacher Daniel J. Cooper</strong> – Native English speaker and business communication coach.</p>
-      <p><strong>Teacher Yesenia D. Cooper</strong> – Native Spanish speaker providing in-line English↔Spanish translation.</p>
-    </section>
+      <!-- PROGRAMS / LEVELS -->
+      <section id="programs">
+        <h2 class="section-title">Programas por nivel · Teacher Sergio’s Class</h2>
+        <p class="section-subtitle">
+          Desde cero hasta “proficiency” gerencial. Cada nivel incluye práctica
+          en vivo, tareas aplicadas a tu realidad profesional y un examen final
+          de conversación con un nativo.
+        </p>
+        <div class="levels-grid">
+          <article class="level-card">
+            <div class="level-name">Nivel Básico</div>
+            <p class="level-desc">Pierde el miedo y empieza a comunicarte.</p>
+            <ul class="level-list">
+              <li>Hablar inglés sin vergüenza</li>
+              <li>Presentarte y ordenar comida</li>
+              <li>Dar y pedir indicaciones</li>
+              <li>Fonetizar correctamente el alfabeto</li>
+              <li>Interactuar con autoridades</li>
+            </ul>
+          </article>
+          <article class="level-card">
+            <div class="level-name">Nivel Intermedio</div>
+            <p class="level-desc">Sube a conversaciones fluidas del día a día.</p>
+            <ul class="level-list">
+              <li>Conversación fluida con nativos</li>
+              <li>Entender programas de TV</li>
+              <li>Pensar automáticamente en inglés</li>
+              <li>Leer y comprender textos</li>
+              <li>Cantar y comprender canciones</li>
+            </ul>
+          </article>
+          <article class="level-card">
+            <div class="level-name">Nivel Avanzado</div>
+            <p class="level-desc">Refina tu inglés para contextos complejos.</p>
+            <ul class="level-list">
+              <li>Conversación casi perfecta</li>
+              <li>Detectar acentos y regionalismos</li>
+              <li>Comprender textos de alto nivel</li>
+              <li>Entender bromas y comedia</li>
+            </ul>
+          </article>
+          <article class="level-card">
+            <div class="level-name">Nivel Gerencial</div>
+            <p class="level-desc">Inglés para líderes y ejecutivos.</p>
+            <ul class="level-list">
+              <li>Dirigir reuniones empresariales</li>
+              <li>Entrevistar prospectos bilingües</li>
+              <li>Comprender textos administrativos</li>
+              <li>Hacer negociaciones clave</li>
+            </ul>
+          </article>
+          <article class="level-card">
+            <div class="level-name">Nivel Proficiency</div>
+            <p class="level-desc">Comunicación al nivel más alto.</p>
+            <ul class="level-list">
+              <li>Comprender tecnicismos</li>
+              <li>Dar conferencias especializadas</li>
+              <li>Comunicarse a nivel gerencial global</li>
+            </ul>
+          </article>
+        </div>
+      </section>
 
-    <section>
-      <h3>Why HDMIWORX Educación?</h3>
-      <ul>
-        <li>Real business English, not just tourist phrases.</li>
-        <li>Live interaction with native speakers and bilingual translators.</li>
-        <li>Designed around U.S.–Mexico business realities.</li>
-        <li>Delivered using modern tools: Microsoft Teams, Bookings, and SharePoint.</li>
-      </ul>
-    </section>
+      <!-- CONVERSATION & TRANSLATION -->
+      <section id="conversation">
+        <h2 class="section-title">Conversación con nativo · Conversation Lab</h2>
+        <p class="section-subtitle">
+          Al final de cada módulo, los alumnos tienen la opción de presentar su
+          examen con <strong>Teacher Daniel</strong>, nativo de Estados Unidos,
+          para validar comprensión real, pronunciación y confianza.
+        </p>
 
-    <section>
-      <h3>Contact</h3>
-      <p>Email: <a href="mailto:info@hdmiworx.com">info@hdmiworx.com</a></p>
-      <p>WhatsApp: +52 (XXX) XXX XXXX <!-- update later --></p>
-    </section>
-  </main>
+        <div class="two-col">
+          <div class="card">
+            <h3>Conversation Lab · Teacher Daniel</h3>
+            <p>
+              Sesiones enfocadas en conversación real: negocios, entrevistas,
+              reuniones de proyecto, presentaciones y temas de la vida diaria.
+            </p>
+            <ul>
+              <li>Exámenes finales de 20–30 minutos</li>
+              <li>Retroalimentación honesta sobre fluidez y pronunciación</li>
+              <li>Simulación de juntas con clientes y jefes</li>
+              <li>Práctica de “small talk” profesional</li>
+            </ul>
+          </div>
+          <div id="translation" class="card">
+            <h3>Traducción en vivo · Yesenia</h3>
+            <p>
+              Yesenia es bilingüe, vive en Estados Unidos y domina la
+              traducción en tiempo real inglés–español–inglés. Ideal para:
+            </p>
+            <ul>
+              <li>Llamadas con clientes o proveedores</li>
+              <li>Revisión de correos importantes antes de enviarlos</li>
+              <li>Traducción de presentaciones y propuestas</li>
+              <li>Coaching cultural para moverte con naturalidad en EE. UU.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-  <footer>
-    © <span id="year"></span> HDMIWORX Educación · Hablando Directo · Maestros Internacionales
-  </footer>
+      <!-- CONTACT -->
+      <section id="contact">
+        <h2 class="section-title">Agenda tu examen o pide información</h2>
+        <p class="section-subtitle">
+          Cuéntanos qué necesitas: inglés general, preparación para un nuevo
+          trabajo, negociación con un cliente en Estados Unidos o soporte de
+          traducción para tu empresa.
+        </p>
+
+        <div class="card">
+          <p>
+            Escríbenos por correo, mensaje o programa una llamada. Podemos
+            atenderte desde Mexicali, Utah o en línea desde cualquier parte.
+          </p>
+
+          <div class="contact-row">
+            <span>📧 <strong>info@hdmiworx.com</strong></span>
+            <!-- Replace this with your real WhatsApp / phone once ready -->
+            <span>📱 WhatsApp / Tel: <em>por confirmar</em></span>
+            <span>🌐 www.hdmiworx.com</span>
+          </div>
+
+          <p style="font-size:0.8rem; color:var(--muted); margin-top:0.7rem;">
+            Próximamente: agenda automática con Microsoft Teams y pagos por suscripción.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>© <span id="year"></span> HDMIWORX Educación · Teacher Sergio’s Class · Todos los derechos reservados.</span>
+      <span>Operamos entre Mexicali, Baja California y Utah, Estados Unidos.</span>
+    </footer>
+  </div>
 
   <script>
+    // simple year updater, no frameworks
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
