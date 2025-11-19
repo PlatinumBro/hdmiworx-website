@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <title>HDMIWORX Educación – Hablando Directo · Maestros Internacionales</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="HDMIWORX Educación conecta a alumnos en México y Estados Unidos con maestros internacionales, conversación con nativos y servicios de traducción en tiempo real." />
+  <!-- Optional: favicon using your logo -->
+  <!-- <link rel="icon" type="image/svg+xml" href="/assets/hdmiworx-educacion-logo.svg" /> -->
   <style>
     :root {
       --primary: #0c2340;      /* deep navy */
@@ -63,10 +65,23 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    /* DROP YOUR LOGO FILE HERE */
+    .logo-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* Fallback text if you remove the <img> */
+    .logo-mark span {
       font-weight: 800;
       font-size: 0.8rem;
       color: var(--primary);
-      background: #fff;
     }
 
     .brand-text {
@@ -88,6 +103,12 @@
       color: var(--muted);
     }
 
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
     .nav-links {
       display: flex;
       flex-wrap: wrap;
@@ -106,13 +127,29 @@
       background: rgba(255,255,255,0.7);
     }
 
-    .language-toggle {
+    .language-switcher {
+      display: flex;
+      align-items: center;
+      gap: 0.15rem;
       font-size: 0.8rem;
       color: var(--muted);
     }
 
-    .language-toggle strong {
-      color: var(--primary);
+    .language-toggle {
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      padding: 0.15rem 0.4rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .language-toggle.is-active {
+      color: #fff;
+      background: var(--primary);
+      font-weight: 700;
     }
 
     /* HERO */
@@ -411,8 +448,13 @@
         flex-direction: column;
         align-items: flex-start;
       }
+      .nav-right {
+        width: 100%;
+        justify-content: space-between;
+      }
       .nav-links {
         justify-content: flex-start;
+        flex: 1;
       }
       .hero {
         grid-template-columns: minmax(0,1fr);
@@ -434,24 +476,37 @@
     <header>
       <div class="brand">
         <div class="logo-mark">
+          <!-- Replace src with your actual logo path -->
+          <img src="/assets/hdmiworx-educacion-logo.svg" alt="HDMIWORX Educación logo" />
+          <!-- Or remove the img and uncomment this as a fallback:
           <span>HD</span>
+          -->
         </div>
         <div class="brand-text">
           <span>HDMIWORX EDUCACIÓN</span>
           <span>Hablando directo · Maestros internacionales</span>
         </div>
       </div>
-      <nav class="nav-links">
-        <a href="#programs">Programas</a>
-        <a href="#conversation">Conversación nativa</a>
-        <a href="#translation">Traducción</a>
-        <a href="#contact">Contacto</a>
-        <span class="language-toggle"><strong>ES</strong> / EN</span>
-      </nav>
+
+      <div class="nav-right">
+        <nav class="nav-links">
+          <!-- These anchors scroll to IDs inside the currently visible <main> -->
+          <a href="#programs">Programas</a>
+          <a href="#conversation">Conversación nativa</a>
+          <a href="#translation">Traducción</a>
+          <a href="#contact">Contacto</a>
+        </nav>
+        <div class="language-switcher">
+          <button class="language-toggle is-active" data-lang-switch="es"><strong>ES</strong></button>
+          <span>/</span>
+          <button class="language-toggle" data-lang-switch="en">EN</button>
+        </div>
+      </div>
     </header>
 
-    <!-- HERO -->
-    <main>
+    <!-- MAIN – SPANISH VERSION -->
+    <main data-lang="es">
+      <!-- HERO -->
       <section class="hero">
         <div>
           <div class="badge">
@@ -473,7 +528,6 @@
             <li>Traducción simultánea y coaching cultural con <strong>Teacher Yesenia</strong></li>
           </ul>
           <div class="hero-cta">
-            <!-- Replace these hrefs with your real links (Calendly, Teams, WhatsApp, etc.) -->
             <a href="#contact" class="btn btn-primary">Agenda tu sesión</a>
             <a href="mailto:info@hdmiworx.com" class="btn btn-outline">Escríbenos · info@hdmiworx.com</a>
           </div>
@@ -630,13 +684,201 @@
 
           <div class="contact-row">
             <span>📧 <strong>info@hdmiworx.com</strong></span>
-            <!-- Replace this with your real WhatsApp / phone once ready -->
             <span>📱 WhatsApp / Tel: <em>por confirmar</em></span>
             <span>🌐 www.hdmiworx.com</span>
           </div>
 
           <p style="font-size:0.8rem; color:var(--muted); margin-top:0.7rem;">
             Próximamente: agenda automática con Microsoft Teams y pagos por suscripción.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- MAIN – ENGLISH VERSION -->
+    <main data-lang="en" style="display:none;">
+      <!-- HERO -->
+      <section class="hero">
+        <div>
+          <div class="badge">
+            <span class="badge-dot"></span>
+            Real English for real business
+          </div>
+          <h1>
+            Conversational English and<br />
+            business <span class="highlight">Mexico–United States</span>
+          </h1>
+          <p class="hero-subtitle">
+            HDMIWORX Education connects students in Mexicali, Utah, and beyond
+            with international teachers, native conversation, and real-time
+            translation support.
+          </p>
+          <ul class="hero-list">
+            <li>Proven methodology by <strong>Teacher Sergio</strong></li>
+            <li>Final speaking exams with <strong>Teacher Daniel</strong> (native English)</li>
+            <li>Live translation and cultural coaching with <strong>Teacher Yesenia</strong></li>
+          </ul>
+          <div class="hero-cta">
+            <a href="#contact" class="btn btn-primary">Book your session</a>
+            <a href="mailto:info@hdmiworx.com" class="btn btn-outline">Email us · info@hdmiworx.com</a>
+          </div>
+          <p class="hero-meta">
+            Online classes · small groups and 1:1 sessions · 100% conversational focus.
+          </p>
+        </div>
+
+        <aside class="hero-card">
+          <div class="hero-card-title">A bilingual bridge for your career</div>
+          <div class="hero-card-sub">
+            Designed for professionals who need to move confidently between
+            meetings, emails, and negotiations in English and Spanish.
+          </div>
+          <div class="pill-row">
+            <span class="pill">General English</span>
+            <span class="pill">Business English</span>
+            <span class="pill">Interview prep</span>
+            <span class="pill">Live translation</span>
+          </div>
+          <div class="teachers">
+            <div class="teacher-chip">
+              <strong>Teacher Sergio</strong>
+              <span>28+ years of experience · program creator</span>
+            </div>
+            <div class="teacher-chip">
+              <strong>Teacher Daniel</strong>
+              <span>Native English Speaker · conversation & executive coaching</span>
+            </div>
+            <div class="teacher-chip">
+              <strong>Teacher Yesenia</strong>
+              <span>Real-time English–Spanish translation · cultural context</span>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <!-- PROGRAMS / LEVELS -->
+      <section id="programs">
+        <h2 class="section-title">Programs by level · Teacher Sergio’s Class</h2>
+        <p class="section-subtitle">
+          From zero to managerial proficiency. Every level includes live practice,
+          homework tied to your real work, and a final conversation exam with a native speaker.
+        </p>
+        <div class="levels-grid">
+          <article class="level-card">
+            <div class="level-name">Basic Level</div>
+            <p class="level-desc">Lose your fear and start speaking.</p>
+            <ul class="level-list">
+              <li>Speak English without embarrassment</li>
+              <li>Introduce yourself and order food</li>
+              <li>Give and ask for directions</li>
+              <li>Pronounce the alphabet correctly</li>
+              <li>Interact with authorities</li>
+            </ul>
+          </article>
+          <article class="level-card">
+            <div class="level-name">Intermediate Level</div>
+            <p class="level-desc">Move into fluent day-to-day conversations.</p>
+            <ul class="level-list">
+              <li>Fluent conversation with native speakers</li>
+              <li>Understand TV shows</li>
+              <li>Think automatically in English</li>
+              <li>Read and understand texts</li>
+              <li>Sing and understand songs</li>
+            </ul>
+          </article>
+          <article class="level-card">
+            <div class="level-name">Advanced Level</div>
+            <p class="level-desc">Polish your English for complex contexts.</p>
+            <ul class="level-list">
+              <li>Near-perfect conversation</li>
+              <li>Recognize accents and regionalisms</li>
+              <li>Understand high-level texts</li>
+              <li>Understand jokes and comedy</li>
+            </ul>
+          </article>
+          <article class="level-card">
+            <div class="level-name">Managerial Level</div>
+            <p class="level-desc">English for leaders and executives.</p>
+            <ul class="level-list">
+              <li>Lead business meetings</li>
+              <li>Interview bilingual candidates</li>
+              <li>Understand administrative documents</li>
+              <li>Handle key negotiations</li>
+            </ul>
+          </article>
+          <article class="level-card">
+            <div class="level-name">Proficiency Level</div>
+            <p class="level-desc">Top-tier communication.</p>
+            <ul class="level-list">
+              <li>Understand technical language</li>
+              <li>Give specialized talks</li>
+              <li>Communicate at a global managerial level</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- CONVERSATION & TRANSLATION -->
+      <section id="conversation">
+        <h2 class="section-title">Native conversation · Conversation Lab</h2>
+        <p class="section-subtitle">
+          At the end of each module, students may take their final exam with
+          <strong>Teacher Daniel</strong>, a U.S. native, to validate real comprehension,
+          pronunciation, and confidence.
+        </p>
+
+        <div class="two-col">
+          <div class="card">
+            <h3>Conversation Lab · Teacher Daniel</h3>
+            <p>
+              Sessions focused on real conversation: business, job interviews,
+              project meetings, presentations, and daily life topics.
+            </p>
+            <ul>
+              <li>20–30 minute final speaking exams</li>
+              <li>Honest feedback on fluency and pronunciation</li>
+              <li>Role-play meetings with clients and managers</li>
+              <li>Practice professional “small talk”</li>
+            </ul>
+          </div>
+          <div id="translation" class="card">
+            <h3>Live translation · Teacher Yesenia</h3>
+            <p>
+              Yesenia is bilingual, lives in the United States, and specializes
+              in real-time English–Spanish–English translation. Ideal for:
+            </p>
+            <ul>
+              <li>Calls with clients or suppliers</li>
+              <li>Reviewing important emails before sending</li>
+              <li>Translating decks and proposals</li>
+              <li>Cultural coaching to move naturally in the U.S.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact">
+        <h2 class="section-title">Schedule your exam or request info</h2>
+        <p class="section-subtitle">
+          Tell us what you need: general English, a new job opportunity, a
+          negotiation with a U.S. client, or translation support for your company.
+        </p>
+
+        <div class="card">
+          <p>
+            Write to us by email, message, or schedule a call. We can support you
+            from Mexicali, Utah, or online from anywhere.
+          </p>
+
+          <div class="contact-row">
+            <span>📧 <strong>info@hdmiworx.com</strong></span>
+            <span>📱 WhatsApp / Phone: <em>TBD</em></span>
+            <span>🌐 www.hdmiworx.com</span>
+          </div>
+
+          <p style="font-size:0.8rem; color:var(--muted); margin-top:0.7rem;">
+            Coming soon: automatic scheduling with Microsoft Teams and subscription payments.
           </p>
         </div>
       </section>
@@ -651,6 +893,43 @@
   <script>
     // simple year updater, no frameworks
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // language toggle logic
+    const langButtons = document.querySelectorAll('[data-lang-switch]');
+    const mains = document.querySelectorAll('main[data-lang]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    function setLanguage(lang) {
+      // Show/hide mains
+      mains.forEach(main => {
+        main.style.display = (main.dataset.lang === lang) ? '' : 'none';
+      });
+
+      // Update active state on buttons
+      langButtons.forEach(btn => {
+        const isActive = btn.dataset.langSwitch === lang;
+        btn.classList.toggle('is-active', isActive);
+      });
+
+      // Update html lang attribute
+      document.documentElement.lang = lang;
+
+      // Optional: adjust nav link text when in EN
+      navLinks[0].textContent = (lang === 'en') ? 'Programs' : 'Programas';
+      navLinks[1].textContent = (lang === 'en') ? 'Native conversation' : 'Conversación nativa';
+      navLinks[2].textContent = (lang === 'en') ? 'Translation' : 'Traducción';
+      navLinks[3].textContent = (lang === 'en') ? 'Contact' : 'Contacto';
+    }
+
+    langButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.langSwitch;
+        setLanguage(lang);
+      });
+    });
+
+    // default to Spanish
+    setLanguage('es');
   </script>
 </body>
 </html>
