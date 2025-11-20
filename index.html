@@ -889,8 +889,21 @@
     </main>
 
     <footer>
-      <span>© <span id="year"></span> HDMIWORX Educación · Teacher Sergio’s Class · Todos los derechos reservados.</span>
-      <span>Operamos entre Mexicali, Baja California y Utah, Estados Unidos.</span>
+      <span>
+        © <span id="year"></span>
+        <span data-lang-footer="es">
+          HDMIWORX Educación · Teacher Sergio’s Class · Todos los derechos reservados.
+        </span>
+        <span data-lang-footer="en" style="display:none">
+          HDMIWORX Education · Teacher Sergio’s Class · All rights reserved.
+        </span>
+      </span>
+      <span data-lang-footer="es">
+        Operamos entre Mexicali, Baja California y Utah, Estados Unidos.
+      </span>
+      <span data-lang-footer="en" style="display:none">
+        We operate between Mexicali, Baja California and Utah, United States.
+      </span>
     </footer>
   </div>
 
@@ -902,6 +915,7 @@
     const langButtons = document.querySelectorAll('[data-lang-switch]');
     const mains = document.querySelectorAll('main[data-lang]');
     const navLinks = document.querySelectorAll('.nav-links a');
+    const footerBits = document.querySelectorAll('[data-lang-footer]');
 
     function setLanguage(lang) {
       // Show/hide mains
@@ -918,11 +932,16 @@
       // Update html lang attribute
       document.documentElement.lang = lang;
 
-      // Optional: adjust nav link text when in EN
+      // Adjust nav link text when in EN
       navLinks[0].textContent = (lang === 'en') ? 'Programs' : 'Programas';
       navLinks[1].textContent = (lang === 'en') ? 'Native conversation' : 'Conversación nativa';
       navLinks[2].textContent = (lang === 'en') ? 'Translation' : 'Traducción';
       navLinks[3].textContent = (lang === 'en') ? 'Contact' : 'Contacto';
+
+      // Toggle footer language
+      footerBits.forEach(el => {
+        el.style.display = (el.dataset.langFooter === lang) ? '' : 'none';
+      });
     }
 
     langButtons.forEach(btn => {
