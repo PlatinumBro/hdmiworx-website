@@ -424,6 +424,53 @@
       background: #fff;
     }
 
+    /* LEAD FORM */
+    .lead-form {
+      margin-top: 1rem;
+      display: grid;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0.6rem;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.18rem;
+    }
+
+    .form-field label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .form-field input,
+    .form-field textarea {
+      border-radius: 8px;
+      border: 1px solid rgba(12,35,64,0.15);
+      padding: 0.45rem 0.5rem;
+      font-size: 0.84rem;
+      font-family: inherit;
+      background: #fafbff;
+    }
+
+    .form-field textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+
+    .form-note {
+      font-size: 0.74rem;
+      color: var(--muted);
+      margin-top: 0.4rem;
+    }
+
     footer {
       margin-top: 2.7rem;
       padding-top: 1.3rem;
@@ -528,6 +575,7 @@
             <li>Traducción simultánea y coaching cultural con <strong>Teacher Yesenia</strong></li>
           </ul>
           <div class="hero-cta">
+            <!-- Scrolls to contact / lead form -->
             <a href="#contact" class="btn btn-primary">Agenda tu sesión</a>
             <a href="mailto:info@hdmiworx.com" class="btn btn-outline">Escríbenos · info@hdmiworx.com</a>
           </div>
@@ -690,6 +738,48 @@
             <span>🌐 www.hdmiworx.com</span>
           </div>
 
+          <!-- LEAD FORM – SPANISH -->
+          <form class="lead-form" data-lang="es">
+            <div class="form-row">
+              <div class="form-field">
+                <label for="es-name">Nombre completo</label>
+                <input id="es-name" name="Nombre" type="text" required />
+              </div>
+              <div class="form-field">
+                <label for="es-email">Correo electrónico</label>
+                <input id="es-email" name="Email" type="email" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="es-whatsapp">WhatsApp / Teléfono</label>
+                <input id="es-whatsapp" name="WhatsApp/Teléfono" type="text" />
+              </div>
+              <div class="form-field">
+                <label for="es-location">Ciudad y país</label>
+                <input id="es-location" name="Ciudad y país" type="text" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="es-times">Horarios preferidos</label>
+                <input id="es-times" name="Horarios preferidos" type="text" placeholder="Ej. lunes y miércoles por la tarde" />
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="es-notes">Cuéntanos qué necesitas</label>
+              <textarea id="es-notes" name="Necesidades / Objetivos" placeholder="Inglés general, entrevistas, reuniones, traducción, etc."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Enviar solicitud</button>
+            <p class="form-note">
+              No realizamos cargos automáticos. Te responderemos con horarios propuestos y un enlace de pago seguro.
+            </p>
+          </form>
+
           <p style="font-size:0.8rem; color:var(--muted); margin-top:0.7rem;">
             Próximamente: agenda automática con Microsoft Teams y pagos por suscripción.
           </p>
@@ -721,6 +811,7 @@
             <li>Live translation and cultural coaching with <strong>Teacher Yesenia</strong></li>
           </ul>
           <div class="hero-cta">
+            <!-- Scrolls to contact / lead form -->
             <a href="#contact" class="btn btn-primary">Book your session</a>
             <a href="mailto:info@hdmiworx.com" class="btn btn-outline">Email us · info@hdmiworx.com</a>
           </div>
@@ -881,6 +972,48 @@
             <span>🌐 www.hdmiworx.com</span>
           </div>
 
+          <!-- LEAD FORM – ENGLISH -->
+          <form class="lead-form" data-lang="en">
+            <div class="form-row">
+              <div class="form-field">
+                <label for="en-name">Full name</label>
+                <input id="en-name" name="Name" type="text" required />
+              </div>
+              <div class="form-field">
+                <label for="en-email">Email</label>
+                <input id="en-email" name="Email" type="email" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="en-whatsapp">WhatsApp / Phone</label>
+                <input id="en-whatsapp" name="WhatsApp/Phone" type="text" />
+              </div>
+              <div class="form-field">
+                <label for="en-location">City & country</label>
+                <input id="en-location" name="City & country" type="text" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="en-times">Preferred days/times</label>
+                <input id="en-times" name="Preferred days/times" type="text" placeholder="e.g. Mon & Wed evenings" />
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="en-notes">Tell us what you need</label>
+              <textarea id="en-notes" name="Needs / Goals" placeholder="General English, interviews, meetings, translation, etc."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Send request</button>
+            <p class="form-note">
+              We won’t charge you automatically. We’ll reply with suggested times and a secure payment link.
+            </p>
+          </form>
+
           <p style="font-size:0.8rem; color:var(--muted); margin-top:0.7rem;">
             Coming soon: automatic scheduling with Microsoft Teams and subscription payments.
           </p>
@@ -948,6 +1081,31 @@
       btn.addEventListener('click', () => {
         const lang = btn.dataset.langSwitch;
         setLanguage(lang);
+      });
+    });
+
+    // Lead form -> mailto:info@hdmiworx.com
+    const leadForms = document.querySelectorAll('.lead-form');
+
+    leadForms.forEach(form => {
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+        const data = new FormData(form);
+        let bodyLines = [];
+
+        data.forEach((value, key) => {
+          bodyLines.push(`${key}: ${value}`);
+        });
+
+        const lang = form.dataset.lang || 'es';
+        const subject = lang === 'en'
+          ? 'New session request – HDMIWORX Education'
+          : 'Nueva solicitud de sesión – HDMIWORX Educación';
+
+        const mailto = `mailto:info@hdmiworx.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+
+        window.location.href = mailto;
+        form.reset();
       });
     });
 
