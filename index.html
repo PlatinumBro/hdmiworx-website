@@ -1040,77 +1040,79 @@
     </footer>
   </div>
 
-  <script>
-    // simple year updater, no frameworks
-    document.getElementById('year').textContent = new Date().getFullYear();
+<script>
+  // simple year updater, no frameworks
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-    // language toggle logic
-    const langButtons = document.querySelectorAll('[data-lang-switch]');
-    const mains = document.querySelectorAll('main[data-lang]');
-    const navLinks = document.querySelectorAll('.nav-links a');
-    const footerBits = document.querySelectorAll('[data-lang-footer]');
+  // language toggle logic
+  const langButtons = document.querySelectorAll('[data-lang-switch]');
+  const mains = document.querySelectorAll('main[data-lang]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const footerBits = document.querySelectorAll('[data-lang-footer]');
 
-    function setLanguage(lang) {
-      // Show/hide mains
-      mains.forEach(main => {
-        main.style.display = (main.dataset.lang === lang) ? '' : 'none';
-      });
+  function setLanguage(lang) {
+    // Show/hide mains
+    mains.forEach(main => {
+      main.style.display = (main.dataset.lang === lang) ? '' : 'none';
+    });
 
-      // Update active state on buttons
-      langButtons.forEach(btn => {
-        const isActive = btn.dataset.langSwitch === lang;
-        btn.classList.toggle('is-active', isActive);
-      });
-
-      // Update html lang attribute
-      document.documentElement.lang = lang;
-
-      // Adjust nav link text when in EN
-      navLinks[0].textContent = (lang === 'en') ? 'Programs' : 'Programas';
-      navLinks[1].textContent = (lang === 'en') ? 'Native conversation' : 'Conversación nativa';
-      navLinks[2].textContent = (lang === 'en') ? 'Translation' : 'Traducción';
-      navLinks[3].textContent = (lang === 'en') ? 'Contact' : 'Contacto';
-
-      // Toggle footer language
-      footerBits.forEach(el => {
-        el.style.display = (el.dataset.langFooter === lang) ? '' : 'none';
-      });
-    }
-
+    // Update active state on buttons
     langButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const lang = btn.dataset.langSwitch;
-        setLanguage(lang);
-      });
+      const isActive = btn.dataset.langSwitch === lang;
+      btn.classList.toggle('is-active', isActive);
     });
 
-    // Lead form -> mailto:info@hdmiworx.com
-    const leadForms = document.querySelectorAll('.lead-form');
+    // Update html lang attribute
+    document.documentElement.lang = lang;
 
-    leadForms.forEach(form => {
-      form.addEventListener('submit', event => {
-        event.preventDefault();
-        const data = new FormData(form);
-        let bodyLines = [];
+    // Adjust nav link text when in EN
+    navLinks[0].textContent = (lang === 'en') ? 'Programs' : 'Programas';
+    navLinks[1].textContent = (lang === 'en') ? 'Native conversation' : 'Conversación nativa';
+    navLinks[2].textContent = (lang === 'en') ? 'Translation' : 'Traducción';
+    navLinks[3].textContent = (lang === 'en') ? 'Contact' : 'Contacto';
 
-        data.forEach((value, key) => {
-          bodyLines.push(`${key}: ${value}`);
-        });
-
-        const lang = form.dataset.lang || 'es';
-        const subject = lang === 'en'
-          ? 'New session request – HDMIWORX Education'
-          : 'Nueva solicitud de sesión – HDMIWORX Educación';
-
-        const mailto = `mailto:info@hdmiworx.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
-
-        window.location.href = mailto;
-        form.reset();
-      });
+    // Toggle footer language
+    footerBits.forEach(el => {
+      el.style.display = (el.dataset.langFooter === lang) ? '' : 'none';
     });
+  }
 
-    // default to Spanish
-    setLanguage('es');
-  </script>
+  langButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.langSwitch;
+      setLanguage(lang);
+    });
+  });
+
+  // Lead form -> mailto:info@hdmiworx.com
+  const leadForms = document.querySelectorAll('.lead-form');
+
+  leadForms.forEach(form => {
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      const data = new FormData(form);
+      let bodyLines = [];
+
+      data.forEach((value, key) => {
+        bodyLines.push(`${key}: ${value}`);
+      });
+
+      // Use current page language instead of per-form data
+      const lang = document.documentElement.lang || 'es';
+
+      const subject = lang === 'en'
+        ? 'New session request – HDMIWORX Education'
+        : 'Nueva solicitud de sesión – HDMIWORX Educación';
+
+      const mailto = `mailto:info@hdmiworx.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+
+      window.location.href = mailto;
+      form.reset();
+    });
+  });
+
+  // default to Spanish
+  setLanguage('es');
+</script>
 </body>
 </html>
