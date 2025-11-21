@@ -5,8 +5,8 @@
   <title>HDMIWORX Educación – Hablando Directo · Maestros Internacionales</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="HDMIWORX Educación conecta a alumnos en México y Estados Unidos con maestros internacionales, conversación con nativos y servicios de traducción en tiempo real." />
-  <!-- Optional: favicon using your logo -->
-<link rel="icon" type="image/svg+xml" href="/assets/HDMIWORX2.jpg" />
+  <!-- Favicon using your JPG logo -->
+  <link rel="icon" type="image/jpeg" href="/assets/HDMIWORX2.jpg" />
   <style>
     :root {
       --primary: #0c2340;      /* deep navy */
@@ -57,18 +57,19 @@
       gap: 0.75rem;
     }
 
+    /* BIG DESKTOP LOGO */
     .logo-mark {
-  width: 180px;          /* was ~44–72 */
-  height: 180px;
-  border-radius: 28px;
-  border: 2px solid var(--primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #fff;
-  overflow: hidden;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-}
+      width: 160px;
+      height: 160px;
+      border-radius: 28px;
+      border: 2px solid var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
 
     .logo-mark img {
       width: 100%;
@@ -543,6 +544,8 @@
     }
 
     /* RESPONSIVE */
+
+    /* Medium screens (iPad, small laptops) – shrink logo slightly */
     @media (max-width: 800px) {
       header {
         flex-direction: column;
@@ -570,6 +573,28 @@
       }
       .modal {
         margin: 0 1rem;
+      }
+      .logo-mark {
+        width: 120px;
+        height: 120px;
+        border-radius: 24px;
+        box-shadow: 0 10px 24px rgba(0,0,0,0.14);
+      }
+    }
+
+    /* Small phones – keep it compact so it doesn’t dominate the header */
+    @media (max-width: 480px) {
+      .logo-mark {
+        width: 96px;
+        height: 96px;
+        border-radius: 20px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+      }
+      .brand-text span:first-child {
+        font-size: 0.85rem;
+      }
+      .brand-text span:last-child {
+        font-size: 0.75rem;
       }
     }
   </style>
