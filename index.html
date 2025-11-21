@@ -442,7 +442,6 @@
     }
 
     /* MODAL */
-
     .modal-backdrop {
       position: fixed;
       inset: 0;
@@ -1146,6 +1145,14 @@
     const bookingModal = document.getElementById('booking-modal');
     const modalForms = bookingModal.querySelectorAll('form[data-lang-form]');
 
+    // Map nav links to section IDs, in order
+    const sectionIds = ['programs', 'conversation', 'translation', 'contact'];
+    navLinks.forEach((link, index) => {
+      if (sectionIds[index]) {
+        link.dataset.section = sectionIds[index];
+      }
+    });
+
     function setLanguage(lang) {
       mains.forEach(main => {
         main.style.display = (main.dataset.lang === lang) ? '' : 'none';
@@ -1158,6 +1165,7 @@
 
       document.documentElement.lang = lang;
 
+      // Update nav labels only (links themselves are handled manually)
       navLinks[0].textContent = (lang === 'en') ? 'Programs' : 'Programas';
       navLinks[1].textContent = (lang === 'en') ? 'Native conversation' : 'Conversación nativa';
       navLinks[2].textContent = (lang === 'en') ? 'Translation' : 'Traducción';
@@ -1179,6 +1187,21 @@
     langButtons.forEach(btn => {
       btn.addEventListener('click', () => {
         setLanguage(btn.dataset.langSwitch);
+      });
+    });
+
+    // NAV: smooth scroll to the active language section
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const lang = document.documentElement.lang || 'es';
+        const sectionId = link.dataset.section;
+        const activeMain = document.querySelector(`main[data-lang="${lang}"]`);
+        if (!activeMain || !sectionId) return;
+        const target = activeMain.querySelector(`#${sectionId}`);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       });
     });
 
