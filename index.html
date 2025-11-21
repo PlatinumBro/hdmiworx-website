@@ -69,7 +69,6 @@
       overflow: hidden;
     }
 
-    /* DROP YOUR LOGO FILE HERE */
     .logo-mark img {
       width: 100%;
       height: 100%;
@@ -77,7 +76,6 @@
       display: block;
     }
 
-    /* Fallback text if you remove the <img> */
     .logo-mark span {
       font-weight: 800;
       font-size: 0.8rem;
@@ -319,7 +317,6 @@
     }
 
     /* SECTIONS */
-
     section {
       margin-bottom: 2.6rem;
     }
@@ -424,9 +421,75 @@
       background: #fff;
     }
 
-    /* LEAD FORM */
+    footer {
+      margin-top: 2.7rem;
+      padding-top: 1.3rem;
+      border-top: 1px solid rgba(12,35,64,0.08);
+      font-size: 0.78rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+    }
+
+    footer a {
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      text-underline-offset: 2px;
+    }
+
+    /* MODAL */
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 50;
+    }
+
+    .modal {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      max-width: 560px;
+      width: 100%;
+      padding: 1.2rem 1.4rem 1.3rem;
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.6rem;
+    }
+
+    .modal-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .modal-close {
+      border: none;
+      background: transparent;
+      font-size: 1.1rem;
+      line-height: 1;
+      cursor: pointer;
+      color: var(--muted);
+      padding: 0.15rem 0.4rem;
+      border-radius: 999px;
+    }
+
+    .modal-close:hover {
+      background: rgba(0,0,0,0.04);
+    }
+
     .lead-form {
-      margin-top: 1rem;
+      margin-top: 0.25rem;
       display: grid;
       gap: 0.75rem;
       font-size: 0.85rem;
@@ -465,28 +528,17 @@
       resize: vertical;
     }
 
+    .form-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.5rem;
+      margin-top: 0.2rem;
+    }
+
     .form-note {
       font-size: 0.74rem;
       color: var(--muted);
       margin-top: 0.4rem;
-    }
-
-    footer {
-      margin-top: 2.7rem;
-      padding-top: 1.3rem;
-      border-top: 1px solid rgba(12,35,64,0.08);
-      font-size: 0.78rem;
-      color: var(--muted);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      justify-content: space-between;
-    }
-
-    footer a {
-      text-decoration: underline;
-      text-decoration-style: dotted;
-      text-underline-offset: 2px;
     }
 
     /* RESPONSIVE */
@@ -515,6 +567,9 @@
       .two-col {
         grid-template-columns: minmax(0,1fr);
       }
+      .modal {
+        margin: 0 1rem;
+      }
     }
   </style>
 </head>
@@ -523,7 +578,6 @@
     <header>
       <div class="brand">
         <div class="logo-mark">
-          <!-- Replace src with your actual logo path -->
           <img src="/assets/hdmiworx-educacion-logo.svg" alt="HDMIWORX Educación logo" />
         </div>
         <div class="brand-text">
@@ -534,7 +588,6 @@
 
       <div class="nav-right">
         <nav class="nav-links">
-          <!-- These anchors scroll to IDs inside the currently visible <main> -->
           <a href="#programs">Programas</a>
           <a href="#conversation">Conversación nativa</a>
           <a href="#translation">Traducción</a>
@@ -572,8 +625,7 @@
             <li>Traducción simultánea y coaching cultural con <strong>Teacher Yesenia</strong></li>
           </ul>
           <div class="hero-cta">
-            <!-- Scrolls to contact / form -->
-            <a href="#contact" class="btn btn-primary">Agenda tu sesión</a>
+            <button type="button" class="btn btn-primary book-btn">Agenda tu sesión</button>
             <a href="mailto:info@hdmiworx.com" class="btn btn-outline">Escríbenos · info@hdmiworx.com</a>
           </div>
           <p class="hero-meta">
@@ -728,54 +780,12 @@
           </p>
 
           <div class="contact-row">
-            <span>📧 <strong>info@hdmiworx.com</strong></span>
+            <span>📧 <a href="mailto:info@hdmiworx.com"><strong>info@hdmiworx.com</strong></a></span>
             <span>🐦 X / Twitter:
               <a href="https://x.com/hdmiworx" target="_blank" rel="noopener noreferrer">@hdmiworx</a>
             </span>
-            <span>🌐 www.hdmiworx.com</span>
+            <span>🌐 <a href="https://www.hdmiworx.com" target="_blank" rel="noopener noreferrer">www.hdmiworx.com</a></span>
           </div>
-
-          <!-- LEAD FORM – SPANISH -->
-          <form class="lead-form" data-lang="es">
-            <div class="form-row">
-              <div class="form-field">
-                <label for="es-name">Nombre completo</label>
-                <input id="es-name" name="Nombre" type="text" required />
-              </div>
-              <div class="form-field">
-                <label for="es-email">Correo electrónico</label>
-                <input id="es-email" name="Email" type="email" required />
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-field">
-                <label for="es-whatsapp">WhatsApp / Teléfono</label>
-                <input id="es-whatsapp" name="WhatsApp / Teléfono" type="text" />
-              </div>
-              <div class="form-field">
-                <label for="es-location">Ciudad y país</label>
-                <input id="es-location" name="Ciudad y país" type="text" />
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-field">
-                <label for="es-times">Horarios preferidos</label>
-                <input id="es-times" name="Horarios preferidos" type="text" placeholder="Ej. lunes y miércoles por la tarde" />
-              </div>
-            </div>
-
-            <div class="form-field">
-              <label for="es-notes">Cuéntanos qué necesitas</label>
-              <textarea id="es-notes" name="Necesidades / Objetivos" placeholder="Inglés general, entrevistas, reuniones, traducción, etc."></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Enviar solicitud</button>
-            <p class="form-note">
-              No realizamos cargos automáticos. Te responderemos con horarios propuestos y un enlace de pago seguro.
-            </p>
-          </form>
 
           <p style="font-size:0.8rem; color:var(--muted); margin-top:0.7rem;">
             Próximamente: agenda automática con Microsoft Teams y pagos por suscripción.
@@ -808,8 +818,7 @@
             <li>Live translation and cultural coaching with <strong>Teacher Yesenia</strong></li>
           </ul>
           <div class="hero-cta">
-            <!-- Scrolls to contact / form -->
-            <a href="#contact" class="btn btn-primary">Book your session</a>
+            <button type="button" class="btn btn-primary book-btn">Book your session</button>
             <a href="mailto:info@hdmiworx.com" class="btn btn-outline">Email us · info@hdmiworx.com</a>
           </div>
           <p class="hero-meta">
@@ -962,54 +971,12 @@
           </p>
 
           <div class="contact-row">
-            <span>📧 <strong>info@hdmiworx.com</strong></span>
+            <span>📧 <a href="mailto:info@hdmiworx.com"><strong>info@hdmiworx.com</strong></a></span>
             <span>🐦 X / Twitter:
               <a href="https://x.com/hdmiworx" target="_blank" rel="noopener noreferrer">@hdmiworx</a>
             </span>
-            <span>🌐 www.hdmiworx.com</span>
+            <span>🌐 <a href="https://www.hdmiworx.com" target="_blank" rel="noopener noreferrer">www.hdmiworx.com</a></span>
           </div>
-
-          <!-- LEAD FORM – ENGLISH -->
-          <form class="lead-form" data-lang="en">
-            <div class="form-row">
-              <div class="form-field">
-                <label for="en-name">Full name</label>
-                <input id="en-name" name="Name" type="text" required />
-              </div>
-              <div class="form-field">
-                <label for="en-email">Email</label>
-                <input id="en-email" name="Email" type="email" required />
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-field">
-                <label for="en-whatsapp">WhatsApp / Phone</label>
-                <input id="en-whatsapp" name="WhatsApp / Phone" type="text" />
-              </div>
-              <div class="form-field">
-                <label for="en-location">City &amp; country</label>
-                <input id="en-location" name="City & country" type="text" />
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-field">
-                <label for="en-times">Preferred days/times</label>
-                <input id="en-times" name="Preferred days/times" type="text" placeholder="e.g. Mon & Wed evenings" />
-              </div>
-            </div>
-
-            <div class="form-field">
-              <label for="en-notes">Tell us what you need</label>
-              <textarea id="en-notes" name="Needs / Goals" placeholder="General English, interviews, meetings, translation, etc."></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Send request</button>
-            <p class="form-note">
-              We won’t charge you automatically. We’ll reply with suggested times and a secure payment link.
-            </p>
-          </form>
 
           <p style="font-size:0.8rem; color:var(--muted); margin-top:0.7rem;">
             Coming soon: automatic scheduling with Microsoft Teams and subscription payments.
@@ -1037,8 +1004,111 @@
     </footer>
   </div>
 
+  <!-- BOOKING MODAL -->
+  <div id="booking-modal" class="modal-backdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="booking-title-es booking-title-en">
+      <div class="modal-header">
+        <div>
+          <div id="booking-title-es" class="modal-title" data-lang-modal="es">Agenda tu sesión</div>
+          <div id="booking-title-en" class="modal-title" data-lang-modal="en" style="display:none;">Book your session</div>
+        </div>
+        <button type="button" class="modal-close" aria-label="Cerrar / Close">×</button>
+      </div>
+
+      <!-- Spanish form -->
+      <form class="lead-form" data-lang-form="es">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="es-name">Nombre completo</label>
+            <input id="es-name" name="name" type="text" required />
+          </div>
+          <div class="form-field">
+            <label for="es-email">Correo electrónico</label>
+            <input id="es-email" name="email" type="email" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="es-whatsapp">WhatsApp / Teléfono</label>
+            <input id="es-whatsapp" name="whatsapp" type="text" />
+          </div>
+          <div class="form-field">
+            <label for="es-location">Ciudad y país</label>
+            <input id="es-location" name="location" type="text" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="es-times">Horarios preferidos</label>
+            <input id="es-times" name="times" type="text" placeholder="Ej. lunes y miércoles por la tarde" />
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="es-notes">Cuéntanos qué necesitas</label>
+          <textarea id="es-notes" name="needs" placeholder="Inglés general, entrevistas, reuniones, traducción, etc."></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn btn-outline modal-cancel">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Enviar solicitud</button>
+        </div>
+        <p class="form-note">
+          No realizamos cargos automáticos. Te responderemos con horarios propuestos y un enlace de pago seguro.
+        </p>
+      </form>
+
+      <!-- English form -->
+      <form class="lead-form" data-lang-form="en" style="display:none;">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="en-name">Full name</label>
+            <input id="en-name" name="name" type="text" required />
+          </div>
+          <div class="form-field">
+            <label for="en-email">Email</label>
+            <input id="en-email" name="email" type="email" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="en-whatsapp">WhatsApp / Phone</label>
+            <input id="en-whatsapp" name="whatsapp" type="text" />
+          </div>
+          <div class="form-field">
+            <label for="en-location">City & country</label>
+            <input id="en-location" name="location" type="text" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="en-times">Preferred days/times</label>
+            <input id="en-times" name="times" type="text" placeholder="e.g. Mon & Wed evenings" />
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="en-notes">Tell us what you need</label>
+          <textarea id="en-notes" name="needs" placeholder="General English, interviews, meetings, translation, etc."></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn btn-outline modal-cancel">Cancel</button>
+          <button type="submit" class="btn btn-primary">Send request</button>
+        </div>
+        <p class="form-note">
+          We won’t charge you automatically. We’ll reply with suggested times and a secure payment link.
+        </p>
+      </form>
+    </div>
+  </div>
+
   <script>
-    // simple year updater
+    // year
     document.getElementById('year').textContent = new Date().getFullYear();
 
     // language toggle logic
@@ -1046,76 +1116,143 @@
     const mains = document.querySelectorAll('main[data-lang]');
     const navLinks = document.querySelectorAll('.nav-links a');
     const footerBits = document.querySelectorAll('[data-lang-footer]');
+    const modalTitles = document.querySelectorAll('[data-lang-modal]');
+    const bookingModal = document.getElementById('booking-modal');
+    const modalForms = bookingModal.querySelectorAll('form[data-lang-form]');
 
     function setLanguage(lang) {
-      // Show/hide mains
       mains.forEach(main => {
         main.style.display = (main.dataset.lang === lang) ? '' : 'none';
       });
 
-      // Update active state on buttons
       langButtons.forEach(btn => {
         const isActive = btn.dataset.langSwitch === lang;
         btn.classList.toggle('is-active', isActive);
       });
 
-      // Update html lang attribute
       document.documentElement.lang = lang;
 
-      // Adjust nav link text when in EN
       navLinks[0].textContent = (lang === 'en') ? 'Programs' : 'Programas';
       navLinks[1].textContent = (lang === 'en') ? 'Native conversation' : 'Conversación nativa';
       navLinks[2].textContent = (lang === 'en') ? 'Translation' : 'Traducción';
       navLinks[3].textContent = (lang === 'en') ? 'Contact' : 'Contacto';
 
-      // Toggle footer language
       footerBits.forEach(el => {
         el.style.display = (el.dataset.langFooter === lang) ? '' : 'none';
+      });
+
+      // Update modal titles & form visibility if modal is open
+      modalTitles.forEach(el => {
+        el.style.display = (el.dataset.langModal === lang) ? '' : 'none';
+      });
+      modalForms.forEach(form => {
+        form.style.display = (form.dataset.langForm === lang) ? '' : 'none';
       });
     }
 
     langButtons.forEach(btn => {
       btn.addEventListener('click', () => {
-        const lang = btn.dataset.langSwitch;
-        setLanguage(lang);
+        setLanguage(btn.dataset.langSwitch);
       });
     });
 
-    // Lead form -> opens mailto with filled values
-    const leadForms = document.querySelectorAll('.lead-form');
+    // Modal open/close helpers
+    function openBookingModal() {
+      const lang = document.documentElement.lang || 'es';
+      bookingModal.style.display = 'flex';
+      bookingModal.setAttribute('aria-hidden', 'false');
 
-    leadForms.forEach(form => {
-      form.addEventListener('submit', event => {
+      modalTitles.forEach(el => {
+        el.style.display = (el.dataset.langModal === lang) ? '' : 'none';
+      });
+      modalForms.forEach(form => {
+        form.style.display = (form.dataset.langForm === lang) ? '' : 'none';
+      });
+    }
+
+    function closeBookingModal() {
+      bookingModal.style.display = 'none';
+      bookingModal.setAttribute('aria-hidden', 'true');
+    }
+
+    document.querySelectorAll('.book-btn').forEach(btn => {
+      btn.addEventListener('click', openBookingModal);
+    });
+
+    bookingModal.addEventListener('click', (e) => {
+      if (e.target === bookingModal) {
+        closeBookingModal();
+      }
+    });
+
+    bookingModal.querySelectorAll('.modal-close, .modal-cancel').forEach(btn => {
+      btn.addEventListener('click', closeBookingModal);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && bookingModal.style.display === 'flex') {
+        closeBookingModal();
+      }
+    });
+
+    // Form submit -> open email client with filled info
+    modalForms.forEach(form => {
+      form.addEventListener('submit', (event) => {
         event.preventDefault();
+
+        const lang = document.documentElement.lang || 'es';
         const data = new FormData(form);
-        const lines = [];
 
-        data.forEach((value, key) => {
-          if (value && String(value).trim() !== '') {
-            lines.push(`${key}: ${value}`);
-          }
-        });
+        const name = data.get('name') || '';
+        const email = data.get('email') || '';
+        const whatsapp = data.get('whatsapp') || '';
+        const location = data.get('location') || '';
+        const times = data.get('times') || '';
+        const needs = data.get('needs') || '';
 
-        const lang = form.dataset.lang || document.documentElement.lang || 'es';
+        let subject, body;
 
-        const subject = lang === 'en'
-          ? 'New session request – HDMIWORX Education'
-          : 'Nueva solicitud de sesión – HDMIWORX Educación';
+        if (lang === 'en') {
+          subject = 'Book a session – HDMIWORX Education';
+          body =
+`Hi HDMIWORX,
 
-        const intro = lang === 'en'
-          ? 'New session request from the HDMIWORX Education website:\n\n'
-          : 'Nueva solicitud de sesión desde la página de HDMIWORX Educación:\n\n';
+I'd like to book an English session. My details are:
+- Name: ${name}
+- Email: ${email}
+- City & country: ${location}
+- WhatsApp / phone: ${whatsapp}
+- Preferred days/times: ${times}
+- Needs (general English, work, interview, translation, etc.): ${needs}
 
-        const body = intro + lines.join('\n');
+Thank you.`;
+        } else {
+          subject = 'Quiero agendar una sesión – HDMIWORX Educación';
+          body =
+`Hola HDMIWORX,
+
+Me gustaría agendar una sesión de inglés. Mis datos son:
+- Nombre: ${name}
+- Correo electrónico: ${email}
+- Ciudad y país: ${location}
+- WhatsApp / teléfono: ${whatsapp}
+- Horarios preferidos: ${times}
+- Necesidades (inglés general, trabajo, entrevista, traducción, etc.): ${needs}
+
+Gracias.`;
+        }
 
         const mailto = `mailto:info@hdmiworx.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-        window.location.href = mailto;
+        // Try to open mail client (browser/OS decides how)
+        window.open(mailto, '_blank');
+
         form.reset();
+        closeBookingModal();
       });
     });
 
-    // default to Spanish
+    // default language
     setLanguage('es');
   </script>
 </body>
