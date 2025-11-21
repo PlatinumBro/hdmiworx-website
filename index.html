@@ -69,6 +69,7 @@
       overflow: hidden;
     }
 
+    /* DROP YOUR LOGO FILE HERE */
     .logo-mark img {
       width: 100%;
       height: 100%;
@@ -76,6 +77,7 @@
       display: block;
     }
 
+    /* Fallback text if you remove the <img> */
     .logo-mark span {
       font-weight: 800;
       font-size: 0.8rem;
@@ -317,6 +319,7 @@
     }
 
     /* SECTIONS */
+
     section {
       margin-bottom: 2.6rem;
     }
@@ -421,6 +424,53 @@
       background: #fff;
     }
 
+    /* LEAD FORM */
+    .lead-form {
+      margin-top: 1rem;
+      display: grid;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0.6rem;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.18rem;
+    }
+
+    .form-field label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .form-field input,
+    .form-field textarea {
+      border-radius: 8px;
+      border: 1px solid rgba(12,35,64,0.15);
+      padding: 0.45rem 0.5rem;
+      font-size: 0.84rem;
+      font-family: inherit;
+      background: #fafbff;
+    }
+
+    .form-field textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+
+    .form-note {
+      font-size: 0.74rem;
+      color: var(--muted);
+      margin-top: 0.4rem;
+    }
+
     footer {
       margin-top: 2.7rem;
       padding-top: 1.3rem;
@@ -484,6 +534,7 @@
 
       <div class="nav-right">
         <nav class="nav-links">
+          <!-- These anchors scroll to IDs inside the currently visible <main> -->
           <a href="#programs">Programas</a>
           <a href="#conversation">Conversación nativa</a>
           <a href="#translation">Traducción</a>
@@ -521,13 +572,8 @@
             <li>Traducción simultánea y coaching cultural con <strong>Teacher Yesenia</strong></li>
           </ul>
           <div class="hero-cta">
-            <!-- Direct email for booking -->
-            <a
-              class="btn btn-primary"
-              href="mailto:info@hdmiworx.com?subject=Quiero%20agendar%20una%20sesi%C3%B3n%20–%20HDMIWORX%20Educaci%C3%B3n&body=Hola%20HDMIWORX%2C%0D%0A%0D%0AMe%20gustar%C3%ADa%20agendar%20una%20sesi%C3%B3n%20de%20ingl%C3%A9s.%20Mis%20datos%20son%3A%0D%0A-%20Nombre%3A%0D%0A-%20Ciudad%20y%20pa%C3%ADs%3A%0D%0A-%20WhatsApp%20%2F%20tel%C3%A9fono%3A%0D%0A-%20Horarios%20preferidos%3A%0D%0A-%20Necesidades%20(ingl%C3%A9s%20general%2C%20trabajo%2C%20entrevista%2C%20traducci%C3%B3n%2C%20etc.)%3A%0D%0A%0D%0AGracias."
-            >
-              Agenda tu sesión
-            </a>
+            <!-- Scrolls to contact / form -->
+            <a href="#contact" class="btn btn-primary">Agenda tu sesión</a>
             <a href="mailto:info@hdmiworx.com" class="btn btn-outline">Escríbenos · info@hdmiworx.com</a>
           </div>
           <p class="hero-meta">
@@ -689,6 +735,48 @@
             <span>🌐 www.hdmiworx.com</span>
           </div>
 
+          <!-- LEAD FORM – SPANISH -->
+          <form class="lead-form" data-lang="es">
+            <div class="form-row">
+              <div class="form-field">
+                <label for="es-name">Nombre completo</label>
+                <input id="es-name" name="Nombre" type="text" required />
+              </div>
+              <div class="form-field">
+                <label for="es-email">Correo electrónico</label>
+                <input id="es-email" name="Email" type="email" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="es-whatsapp">WhatsApp / Teléfono</label>
+                <input id="es-whatsapp" name="WhatsApp / Teléfono" type="text" />
+              </div>
+              <div class="form-field">
+                <label for="es-location">Ciudad y país</label>
+                <input id="es-location" name="Ciudad y país" type="text" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="es-times">Horarios preferidos</label>
+                <input id="es-times" name="Horarios preferidos" type="text" placeholder="Ej. lunes y miércoles por la tarde" />
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="es-notes">Cuéntanos qué necesitas</label>
+              <textarea id="es-notes" name="Necesidades / Objetivos" placeholder="Inglés general, entrevistas, reuniones, traducción, etc."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Enviar solicitud</button>
+            <p class="form-note">
+              No realizamos cargos automáticos. Te responderemos con horarios propuestos y un enlace de pago seguro.
+            </p>
+          </form>
+
           <p style="font-size:0.8rem; color:var(--muted); margin-top:0.7rem;">
             Próximamente: agenda automática con Microsoft Teams y pagos por suscripción.
           </p>
@@ -720,13 +808,8 @@
             <li>Live translation and cultural coaching with <strong>Teacher Yesenia</strong></li>
           </ul>
           <div class="hero-cta">
-            <!-- Direct email for booking -->
-            <a
-              class="btn btn-primary"
-              href="mailto:info@hdmiworx.com?subject=Book%20a%20session%20–%20HDMIWORX%20Education&body=Hi%20HDMIWORX%2C%0D%0A%0D%0AI%27d%20like%20to%20book%20an%20English%20session.%20My%20details%20are%3A%0D%0A-%20Name%3A%0D%0A-%20City%20%26%20country%3A%0D%0A-%20WhatsApp%20%2F%20phone%3A%0D%0A-%20Preferred%20days%2Ftimes%3A%0D%0A-%20Needs%20(general%20English%2C%20work%2C%20interview%2C%20translation%2C%20etc.)%3A%0D%0A%0D%0AThank%20you."
-            >
-              Book your session
-            </a>
+            <!-- Scrolls to contact / form -->
+            <a href="#contact" class="btn btn-primary">Book your session</a>
             <a href="mailto:info@hdmiworx.com" class="btn btn-outline">Email us · info@hdmiworx.com</a>
           </div>
           <p class="hero-meta">
@@ -886,6 +969,48 @@
             <span>🌐 www.hdmiworx.com</span>
           </div>
 
+          <!-- LEAD FORM – ENGLISH -->
+          <form class="lead-form" data-lang="en">
+            <div class="form-row">
+              <div class="form-field">
+                <label for="en-name">Full name</label>
+                <input id="en-name" name="Name" type="text" required />
+              </div>
+              <div class="form-field">
+                <label for="en-email">Email</label>
+                <input id="en-email" name="Email" type="email" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="en-whatsapp">WhatsApp / Phone</label>
+                <input id="en-whatsapp" name="WhatsApp / Phone" type="text" />
+              </div>
+              <div class="form-field">
+                <label for="en-location">City &amp; country</label>
+                <input id="en-location" name="City & country" type="text" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="en-times">Preferred days/times</label>
+                <input id="en-times" name="Preferred days/times" type="text" placeholder="e.g. Mon & Wed evenings" />
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="en-notes">Tell us what you need</label>
+              <textarea id="en-notes" name="Needs / Goals" placeholder="General English, interviews, meetings, translation, etc."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Send request</button>
+            <p class="form-note">
+              We won’t charge you automatically. We’ll reply with suggested times and a secure payment link.
+            </p>
+          </form>
+
           <p style="font-size:0.8rem; color:var(--muted); margin-top:0.7rem;">
             Coming soon: automatic scheduling with Microsoft Teams and subscription payments.
           </p>
@@ -923,22 +1048,27 @@
     const footerBits = document.querySelectorAll('[data-lang-footer]');
 
     function setLanguage(lang) {
+      // Show/hide mains
       mains.forEach(main => {
         main.style.display = (main.dataset.lang === lang) ? '' : 'none';
       });
 
+      // Update active state on buttons
       langButtons.forEach(btn => {
         const isActive = btn.dataset.langSwitch === lang;
         btn.classList.toggle('is-active', isActive);
       });
 
+      // Update html lang attribute
       document.documentElement.lang = lang;
 
+      // Adjust nav link text when in EN
       navLinks[0].textContent = (lang === 'en') ? 'Programs' : 'Programas';
       navLinks[1].textContent = (lang === 'en') ? 'Native conversation' : 'Conversación nativa';
       navLinks[2].textContent = (lang === 'en') ? 'Translation' : 'Traducción';
       navLinks[3].textContent = (lang === 'en') ? 'Contact' : 'Contacto';
 
+      // Toggle footer language
       footerBits.forEach(el => {
         el.style.display = (el.dataset.langFooter === lang) ? '' : 'none';
       });
@@ -946,7 +1076,42 @@
 
     langButtons.forEach(btn => {
       btn.addEventListener('click', () => {
-        setLanguage(btn.dataset.langSwitch);
+        const lang = btn.dataset.langSwitch;
+        setLanguage(lang);
+      });
+    });
+
+    // Lead form -> opens mailto with filled values
+    const leadForms = document.querySelectorAll('.lead-form');
+
+    leadForms.forEach(form => {
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+        const data = new FormData(form);
+        const lines = [];
+
+        data.forEach((value, key) => {
+          if (value && String(value).trim() !== '') {
+            lines.push(`${key}: ${value}`);
+          }
+        });
+
+        const lang = form.dataset.lang || document.documentElement.lang || 'es';
+
+        const subject = lang === 'en'
+          ? 'New session request – HDMIWORX Education'
+          : 'Nueva solicitud de sesión – HDMIWORX Educación';
+
+        const intro = lang === 'en'
+          ? 'New session request from the HDMIWORX Education website:\n\n'
+          : 'Nueva solicitud de sesión desde la página de HDMIWORX Educación:\n\n';
+
+        const body = intro + lines.join('\n');
+
+        const mailto = `mailto:info@hdmiworx.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        window.location.href = mailto;
+        form.reset();
       });
     });
 
