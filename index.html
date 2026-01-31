@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>HDMIWORX Educación – Hablando Directo · Maestros Internacionales</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="HDMIWORX Educación conecta a alumnos en México y Estados Unidos con maestros internacionales, conversación con nativos y servicios de traducción en tiempo real." />
+  <!-- Favicon using your JPG logo -->
+  <link rel="icon" type="image/jpeg" href="/assets/HDMIWORX2.jpg" />
+  <style>
+    :root {
+      --primary: #0c2340;      /* deep navy */
+      --accent: #e3342f;       /* red */
+      --background: #f5f5f8;
+      --text: #222;
+      --muted: #666;
+      --radius: 12px;
+      --shadow: 0 14px 30px rgba(0,0,0,0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a.underline-link {
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      text-underline-offset: 2px;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.75rem 1.25rem 3rem;
+    }
+
+    /* HEADER / NAV */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    /* BIG DESKTOP LOGO */
+    .logo-mark {
+      width: 160px;
+      height: 160px;
+      border-radius: 28px;
+      border: 2px solid var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+
+    .logo-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .logo-mark span {
+      font-weight: 800;
+      font-size: 0.8rem;
+      color: var(--primary);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .brand-text span:first-child {
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      color: var(--primary);
+    }
+
+    .brand-text span:last-child {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      font-size: 0.86rem;
+    }
+
+    .nav-links a {
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+    }
+
+    .nav-links a:hover {
+      border-color: rgba(12,35,64,0.15);
+      background: rgba(255,255,255,0.7);
+    }
+
+    .language-switcher {
+      display: flex;
+      align-items: center;
+      gap: 0.15rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .language-toggle {
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      padding: 0.15rem 0.4rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .language-toggle.is-active {
+      color: #fff;
+      background: var(--primary);
+      font-weight: 700;
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+      gap: 2rem;
+      align-items: center;
+      margin-bottom: 2.75rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.22rem 0.75rem;
+      font-size: 0.75rem;
+      border-radius: 999px;
+      background: rgba(227,52,47,0.07);
+      color: var(--accent);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.7rem;
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .hero h1 {
+      font-size: clamp(1.9rem, 3vw, 2.4rem);
+      line-height: 1.1;
+      margin-bottom: 0.8rem;
+      color: var(--primary);
+    }
+
+    .hero h1 span.highlight {
+      color: var(--accent);
+    }
+
+    .hero-subtitle {
+      font-size: 0.98rem;
+      color: var(--muted);
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-list {
+      font-size: 0.9rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-list li {
+      margin-left: 1.1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.65rem 1.2rem;
+      border-radius: 999px;
+      border: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.08s ease, box-shadow 0.12s ease, background 0.12s ease;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 35px rgba(227,52,47,0.25);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border: 1px solid rgba(12,35,64,0.2);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.9);
+    }
+
+    .hero-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .hero-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 1.3rem 1.3rem 1.2rem;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(12,35,64,0.03);
+    }
+
+    .hero-card-title {
+      font-weight: 700;
+      font-size: 0.92rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-card-sub {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 0.7rem;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .pill {
+      font-size: 0.78rem;
+      padding: 0.18rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(12,35,64,0.16);
+      background: rgba(248,249,252,0.9);
+    }
+
+    .teachers {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 0.7rem;
+      margin-top: 0.75rem;
+      font-size: 0.78rem;
+    }
+
+    .teacher-chip {
+      padding: 0.5rem;
+      border-radius: 10px;
+      background: rgba(12,35,64,0.03);
+    }
+
+    .teacher-chip strong {
+      display: block;
+      font-size: 0.82rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .teacher-chip span {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    /* SECTIONS */
+    section {
+      margin-bottom: 2.6rem;
+    }
+
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.3rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 1.2rem;
+    }
+
+    .levels-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+
+    .level-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 1rem 1rem 0.9rem;
+      box-shadow: 0 10px 22px rgba(0,0,0,0.03);
+      border: 1px solid rgba(12,35,64,0.05);
+    }
+
+    .level-name {
+      font-weight: 700;
+      font-size: 0.96rem;
+      margin-bottom: 0.4rem;
+      color: var(--primary);
+    }
+
+    .level-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .level-list {
+      font-size: 0.78rem;
+    }
+
+    .level-list li {
+      margin-left: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.4fr);
+      gap: 1.4rem;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 1.1rem 1.1rem 1rem;
+      box-shadow: 0 10px 22px rgba(0,0,0,0.03);
+      border: 1px solid rgba(12,35,64,0.05);
+      font-size: 0.9rem;
+    }
+
+    .card h3 {
+      font-size: 0.98rem;
+      color: var(--primary);
+      margin-bottom: 0.4rem;
+    }
+
+    .card p {
+      font-size: 0.84rem;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .card ul {
+      font-size: 0.8rem;
+    }
+
+    .card li {
+      margin-left: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      margin-top: 0.6rem;
+    }
+
+    .contact-row span {
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(12,35,64,0.1);
+      background: #fff;
+    }
+
+    footer {
+      margin-top: 2.7rem;
+      padding-top: 1.3rem;
+      border-top: 1px solid rgba(12,35,64,0.08);
+      font-size: 0.78rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+    }
+
+    footer a {
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      text-underline-offset: 2px;
+    }
+
+    /* MODAL */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 50;
+    }
+
+    .modal {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      max-width: 560px;
+      width: 100%;
+      padding: 1.2rem 1.4rem 1.3rem;
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.6rem;
+    }
+
+    .modal-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .modal-close {
+      border: none;
+      background: transparent;
+      font-size: 1.1rem;
+      line-height: 1;
+      cursor: pointer;
+      color: var(--muted);
+      padding: 0.15rem 0.4rem;
+      border-radius: 999px;
+    }
+
+    .modal-close:hover {
+      background: rgba(0,0,0,0.04);
+    }
+
+    .lead-form {
+      margin-top: 0.25rem;
+      display: grid;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0.6rem;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.18rem;
+    }
+
+    .form-field label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .form-field input,
+    .form-field textarea {
+      border-radius: 8px;
+      border: 1px solid rgba(12,35,64,0.15);
+      padding: 0.45rem 0.5rem;
+      font-size: 0.84rem;
+      font-family: inherit;
+      background: #fafbff;
+    }
+
+    .form-field textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+
+    .form-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.5rem;
+      margin-top: 0.2rem;
+    }
+
+    .form-note {
+      font-size: 0.74rem;
+      color: var(--muted);
+      margin-top: 0.4rem;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 800px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-right {
+        width: 100%;
+        justify-content: space-between;
+      }
+      .nav-links {
+        justify-content: flex-start;
+        flex: 1;
+      }
+      .hero {
+        grid-template-columns: minmax(0,1fr);
+      }
+      .hero-card {
+        order: -1;
+      }
+      .teachers {
+        grid-template-columns: minmax(0,1fr);
+      }
+      .two-col {
+        grid-template-columns: minmax(0,1fr);
+      }
+      .modal {
+        margin: 0 1rem;
+      }
+      .logo-mark {
+        width: 120px;
+        height: 120px;
+        border-radius: 24px;
+        box-shadow: 0 10px 24px rgba(0,0,0,0.14);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo-mark {
+        width: 96px;
+        height: 96px;
+        border-radius: 20px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+      }
+      .brand-text span:first-child {
+        font-size: 0.85rem;
+      }
+      .brand-text span:last-child {
+        font-size: 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="brand">
+        <div class="logo-mark">
+          <img src="/assets/hdmiworx-educacion-logo.PNG" alt="HDMIWORX Educación logo" />
+        </div>
+        <div class="brand-text">
+          <span>HDMIWORX EDUCACIÓN</span>
+          <span>Hablando directo · Maestros internacionales</span>
+        </div>
+      </div>
+
+      <div class="nav-right">
+        <nav class="nav-links">
+          <a href="#programs">Programas</a>
+          <a href="#conversation">Conversación nativa</a>
+          <a href="#translation">Traducción</a>
+          <a href="#contact">Contacto</a>
+        </nav>
+        <div class="language-switcher">
+          <button class="language-toggle is-active" data-lang-switch="es"><strong>ES</strong></button>
+          <span>/</span>
+          <button class="language-toggle" data-lang-switch="en">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN – SPANISH VERSION -->
+    <main data-lang="es">
+      <!-- HERO -->
+      <section class="hero">
+        <div>
+          <div class="badge">
+            <span class="badge-dot"></span>
+            Inglés real para negocios reales
+          </div>
+          <h1>
+            Inglés conversacional y<br />
+            negocios <span class="highlight">México–Estados Unidos</span>
+          </h1>
+          <p class="hero-subtitle">
+            HDMIWORX Educación conecta a alumnos de Mexicali, Utah y más allá
+            con maestros internacionales, conversación con nativos y soporte
+            de traducción en tiempo real.
+          </p>
+          <ul class="hero-list">
+            <li>Metodología probada de <strong><a href="sergio.html" class="underline-link">Teacher Sergio</a></strong></li>
+            <li>Exámenes finales con <strong><a href="daniel.html" class="underline-link">Teacher Daniel</a></strong> (nativo inglés)</li>
+            <li>Traducción simultánea y coaching cultural con <strong><a href="yesenia.html" class="underline-link">Teacher Yesenia</a></strong></li>
+          </ul>
+          <div class="hero-cta">
+            <a href="https://forms.microsoft.com/r/b4Mm7jiXGq"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-primary">Agenda tu sesión</a>
+            <a href="mailto:info@hdmiworx.com" class="btn btn-outline">Escríbenos · info@hdmiworx.com</a>
+          </div>
+          <p class="hero-meta">
+            Clases en línea · grupos pequeños y sesiones 1 a 1 · enfoque 100% conversacional.
+          </p>
+        </div>
+
+        <aside class="hero-card">
+          <div class="hero-card-title">Puente bilingüe para tu carrera</div>
+          <div class="hero-card-sub">
+            Diseñado para profesionistas que necesitan moverse con confianza
+            entre reuniones, correos y negociaciones en inglés y español.
+          </div>
+          <div class="pill-row">
+            <span class="pill">Inglés general</span>
+            <span class="pill">Business English</span>
+            <span class="pill">Preparación entrevistas</span>
+            <span class="pill">Traducción en vivo</span>
+          </div>
+          <div class="teachers">
+            <div class="teacher-chip">
+              <strong><a href="sergio.html" class="underline-link">Teacher Sergio</a></strong>
+              <span>28+ años de experiencia · creador del programa</span>
+            </div>
+            <div class="teacher-chip">
+              <strong><a href="daniel.html" class="underline-link">Teacher Daniel</a></strong>
+              <span>Native English Speaker · conversación y coaching ejecutivo</span>
+            </div>
+            <div class="teacher-chip">
+              <strong><a href="yesenia.html" class="underline-link">Teacher Yesenia</a></strong>
+              <span>Traducción inglés–español en tiempo real · contexto cultural</span>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <!-- PROGRAMS / LEVELS -->
+      <section id="programs">
+        <h2 class="section-title">Programas por nivel · Teacher Sergio’s Class</h2>
+        <p class="section-subtitle">
+          Desde cero hasta “proficiency” gerencial. Cada nivel incluye práctica
+          en vivo, tareas aplicadas a tu realidad profesional y un examen final
+          de conversación con un nativo.
+        </p>
+        <div class="levels-grid">
+          <article class="level-card">
+            <div class="level-name">Nivel Básico</div>
+            <p class="level-desc">Pierde el miedo y empieza a comunicarte.</p>
+            <ul class="level-list">
+              <li>Hablar inglés sin vergüenza</li>
+              <li>Presentarte y ordenar comida</li>
+              <li>Dar y pedir indicaciones</li>
+              <li>Fonetizar correctamente el alfabeto</li>
+              <li>Interactuar con autoridades</li>
+            </ul>
+          </article>
+          <article class="level-card">
+            <div class="level-name">Nivel Intermedio</div>
+            <p class="level-desc">Sube a conversaciones fluidas del día a día.</p>
+            <ul class="level-list">
+              <li>Conversación fluida con nativos</li>
+              <li>Entender programas de TV</li>
+              <li>Pensar automáticamente en inglés</li>
+              <li>Leer y comprender textos</li>
+              <li>Cantar y comprender canciones</li>
+            </ul>
+          </article>
+          <article class="level-card">
+            <div class="level-name">Nivel Avanzado</div>
+            <p class="level-desc">Refina tu inglés para contextos complejos.</p>
+            <ul class="level-list">
+              <li>Conversación casi perfecta</li>
+              <li>Detectar acentos y regionalismos</li>
+              <li>Comprender textos de alto nivel</li>
+              <li>Entender bromas y comedia</li>
+            </ul>
+          </article>
+          <article class="level-card">
+            <div class="level-name">Nivel Gerencial</div>
+            <p class="level-desc">Inglés para líderes y ejecutivos.</p>
+            <ul class="level-list">
+              <li>Dirigir reuniones empresariales</li>
+              <li>Entrevistar prospectos bilingües</li>
+              <li>Comprender textos administrativos</li>
+              <li>Hacer negociaciones clave</li>
+            </ul>
+          </article>
+          <article class="level-card">
+            <div class="level-name">Nivel Proficiency</div>
+            <p class="level-desc">Comunicación al nivel más alto.</p>
+            <ul class="level-list">
+              <li>Comprender tecnicismos</li>
+              <li>Dar conferencias especializadas</li>
+              <li>Comunicarse a nivel gerencial global</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- CONVERSATION & TRANSLATION -->
+      <section id="conversation">
+        <h2 class="section-title">Conversación con nativo · Conversation Lab</h2>
+        <p class="section-subtitle">
+          Al final de cada módulo, los alumnos tienen la opción de presentar su
+          examen con <strong><a href="daniel.html" class="underline-link">Teacher Daniel</a></strong>, nativo de Estados Unidos,
+          para validar comprensión real, pronunciación y confianza.
+        </p>
+
+        <div class="two-col">
+          <div class="card">
+            <h3>Conversation Lab · <a href="daniel.html" class="underline-link">Teacher Daniel</a></h3>
+            <p>
+              Sesiones enfocadas en conversación real: negocios, entrevistas,
+              reuniones de proyecto, presentaciones y temas de la vida diaria.
+            </p>
+            <ul>
+              <li>Exámenes finales de 20–30 minutos</li>
+              <li>Retroalimentación honesta sobre fluidez y pronunciación</li>
+              <li>Simulación de juntas con clientes y jefes</li>
+              <li>Práctica de “small talk” profesional</li>
+            </ul>
+          </div>
+          <div id="translation" class="card">
+            <h3>Traducción en vivo · <a href="yesenia.html" class="underline-link">Teacher Yesenia</a></h3>
+            <p>
+              Yesenia es bilingüe, vive en Estados Unidos y domina la
+              traducción en tiempo real inglés–español–inglés. Ideal para:
+            </p>
+            <ul>
+              <li>Llamadas con clientes o proveedores</li>
+              <li>Revisión de correos importantes antes de enviarlos</li>
+              <li>Traducción de presentaciones y propuestas</li>
+              <li>Coaching cultural para moverte con naturalidad en EE. UU.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact">
+        <h2 class="section-title">Agenda tu examen o pide información</h2>
+        <p class="section-subtitle">
+          Cuéntanos qué necesitas: inglés general, preparación para un nuevo
+          trabajo, negociación con un cliente en Estados Unidos o soporte de
+          traducción para tu empresa.
+        </p>
+
+        <div class="card">
+          <p>
+            Escríbenos por correo, mensaje o programa una llamada. Podemos
+            atenderte desde Mexicali, Utah o en línea desde cualquier parte.
+          </p>
+
+          <div class="contact-row">
+            <span>📧 <a href="mailto:info@hdmiworx.com"><strong>info@hdmiworx.com</strong></a></span>
+            <span>🐦 X / Twitter:
+              <a href="https://x.com/hdmiworx" target="_blank" rel="noopener noreferrer">@hdmiworx</a>
+            </span>
+            <span>🌐 <a href="https://www.hdmiworx.com" target="_blank" rel="noopener noreferrer">www.hdmiworx.com</a></span>
+          </div>
+
+          <p style="font-size:0.8rem; color:var(--muted); margin-top:0.7rem;">
+            Próximamente: agenda automática con Microsoft Teams y pagos por suscripción.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- MAIN – ENGLISH VERSION -->
+    <main data-lang="en" style="display:none;">
+      <!-- HERO -->
+      <section class="hero">
+        <div>
+          <div class="badge">
+            <span class="badge-dot"></span>
+            Real English for real business
+          </div>
+          <h1>
+            Conversational English and<br />
+            business <span class="highlight">Mexico–United States</span>
+          </h1>
+          <p class="hero-subtitle">
+            HDMIWORX Education connects students in Mexicali, Utah, and beyond
+            with international teachers, native conversation, and real-time
+            translation support.
+          </p>
+          <ul class="hero-list">
+            <li>Proven methodology by <strong><a href="sergio.html" class="underline-link">Teacher Sergio</a></strong></li>
+            <li>Final speaking exams with <strong><a href="daniel.html" class="underline-link">Teacher Daniel</a></strong> (native English)</li>
+            <li>Live translation and cultural coaching with <strong><a href="yesenia.html" class="underline-link">Teacher Yesenia</a></strong></li>
+          </ul>
+          <div class="hero-cta">
+            <a href="https://forms.microsoft.com/r/MZVVSma8tH"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-primary">Book your session</a>
+            <a href="mailto:info@hdmiworx.com" class="btn btn-outline">Email us · info@hdmiworx.com</a>
+          </div>
+          <p class="hero-meta">
+            Online classes · small groups and 1:1 sessions · 100% conversational focus.
+          </p>
+        </div>
+
+        <aside class="hero-card">
+          <div class="hero-card-title">A bilingual bridge for your career</div>
+          <div class="hero-card-sub">
+            Designed for professionals who need to move confidently between
+            meetings, emails, and negotiations in English and Spanish.
+          </div>
+          <div class="pill-row">
+            <span class="pill">General English</span>
+            <span class="pill">Business English</span>
+            <span class="pill">Interview prep</span>
+            <span class="pill">Live translation</span>
+          </div>
+          <div class="teachers">
+            <div class="teacher-chip">
+              <strong><a href="sergio.html" class="underline-link">Teacher Sergio</a></strong>
+              <span>28+ years of experience · program creator</span>
+            </div>
+            <div class="teacher-chip">
+              <strong><a href="daniel.html" class="underline-link">Teacher Daniel</a></strong>
+              <span>Native English Speaker · conversation &amp; executive coaching</span>
+            </div>
+            <div class="teacher-chip">
+              <strong><a href="yesenia.html" class="underline-link">Teacher Yesenia</a></strong>
+              <span>Real-time English–Spanish translation · cultural context</span>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <!-- PROGRAMS / LEVELS -->
+      <section id="programs">
+        <h2 class="section-title">Programs by level · Teacher Sergio’s Class</h2>
+        <p class="section-subtitle">
+          From zero to managerial proficiency. Every level includes live practice,
+          homework tied to your real work, and a final conversation exam with a native speaker.
+        </p>
+        <div class="levels-grid">
+          <article class="level-card">
+            <div class="level-name">Basic Level</div>
+            <p class="level-desc">Lose your fear and start speaking.</p>
+            <ul class="level-list">
+              <li>Speak English without embarrassment</li>
+              <li>Introduce yourself and order food</li>
+              <li>Give and ask for directions</li>
+              <li>Pronounce the alphabet correctly</li>
+              <li>Interact with authorities</li>
+            </ul>
+          </article>
+          <article class="level-card">
+            <div class="level-name">Intermediate Level</div>
+            <p class="level-desc">Move into fluent day-to-day conversations.</p>
+            <ul class="level-list">
+              <li>Fluent conversation with native speakers</li>
+              <li>Understand TV shows</li>
+              <li>Think automatically in English</li>
+              <li>Read and understand texts</li>
+              <li>Sing and understand songs</li>
+            </ul>
+          </article>
+          <article class="level-card">
+            <div class="level-name">Advanced Level</div>
+            <p class="level-desc">Polish your English for complex contexts.</p>
+            <ul class="level-list">
+              <li>Near-perfect conversation</li>
+              <li>Recognize accents and regionalisms</li>
+              <li>Understand high-level texts</li>
+              <li>Understand jokes and comedy</li>
+            </ul>
+          </article>
+          <article class="level-card">
+            <div class="level-name">Managerial Level</div>
+            <p class="level-desc">English for leaders and executives.</p>
+            <ul class="level-list">
+              <li>Lead business meetings</li>
+              <li>Interview bilingual candidates</li>
+              <li>Understand administrative documents</li>
+              <li>Handle key negotiations</li>
+            </ul>
+          </article>
+          <article class="level-card">
+            <div class="level-name">Proficiency Level</div>
+            <p class="level-desc">Top-tier communication.</p>
+            <ul class="level-list">
+              <li>Understand technical language</li>
+              <li>Give specialized talks</li>
+              <li>Communicate at a global managerial level</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- CONVERSATION & TRANSLATION -->
+      <section id="conversation">
+        <h2 class="section-title">Native conversation · Conversation Lab</h2>
+        <p class="section-subtitle">
+          At the end of each module, students may take their final exam with
+          <strong><a href="daniel.html" class="underline-link">Teacher Daniel</a></strong>, a U.S. native, to validate real comprehension,
+          pronunciation, and confidence.
+        </p>
+
+        <div class="two-col">
+          <div class="card">
+            <h3>Conversation Lab · <a href="daniel.html" class="underline-link">Teacher Daniel</a></h3>
+            <p>
+              Sessions focused on real conversation: business, job interviews,
+              project meetings, presentations, and daily life topics.
+            </p>
+            <ul>
+              <li>20–30 minute final speaking exams</li>
+              <li>Honest feedback on fluency and pronunciation</li>
+              <li>Role-play meetings with clients and managers</li>
+              <li>Practice professional “small talk”</li>
+            </ul>
+          </div>
+          <div id="translation" class="card">
+            <h3>Live translation · <a href="yesenia.html" class="underline-link">Teacher Yesenia</a></h3>
+            <p>
+              Yesenia is bilingual, lives in the United States, and specializes
+              in real-time English–Spanish–English translation. Ideal for:
+            </p>
+            <ul>
+              <li>Calls with clients or suppliers</li>
+              <li>Reviewing important emails before sending</li>
+              <li>Translating decks and proposals</li>
+              <li>Cultural coaching to move naturally in the U.S.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact">
+        <h2 class="section-title">Schedule your exam or request info</h2>
+        <p class="section-subtitle">
+          Tell us what you need: general English, a new job opportunity, a
+          negotiation with a U.S. client, or translation support for your company.
+        </p>
+
+        <div class="card">
+          <p>
+            Write to us by email, message, or schedule a call. We can support you
+            from Mexicali, Utah, or online from anywhere.
+          </p>
+
+          <div class="contact-row">
+            <span>📧 <a href="mailto:info@hdmiworx.com"><strong>info@hdmiworx.com</strong></a></span>
+            <span>🐦 X / Twitter:
+              <a href="https://x.com/hdmiworx" target="_blank" rel="noopener noreferrer">@hdmiworx</a>
+            </span>
+            <span>🌐 <a href="https://www.hdmiworx.com" target="_blank" rel="noopener noreferrer">www.hdmiworx.com</a></span>
+          </div>
+
+          <p style="font-size:0.8rem; color:var(--muted); margin-top:0.7rem;">
+            Coming soon: automatic scheduling with Microsoft Teams and subscription payments.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>
+        © <span id="year"></span>
+        <span data-lang-footer="es">
+          HDMIWORX Educación · Teacher Sergio’s Class · Todos los derechos reservados.
+        </span>
+        <span data-lang-footer="en" style="display:none">
+          HDMIWORX Education · Teacher Sergio’s Class · All rights reserved.
+        </span>
+      </span>
+      <span data-lang-footer="es">
+        Operamos entre Mexicali, Baja California y Utah, Estados Unidos.
+      </span>
+      <span data-lang-footer="en" style="display:none">
+        We operate between Mexicali, Baja California and Utah, United States.
+      </span>
+    </footer>
+  </div>
+
+  <!-- BOOKING MODAL -->
+  <div id="booking-modal" class="modal-backdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="booking-title-es booking-title-en">
+      <div class="modal-header">
+        <div>
+          <div id="booking-title-es" class="modal-title" data-lang-modal="es">Agenda tu sesión</div>
+          <div id="booking-title-en" class="modal-title" data-lang-modal="en" style="display:none;">Book your session</div>
+        </div>
+        <button type="button" class="modal-close" aria-label="Cerrar / Close">×</button>
+      </div>
+
+      <!-- Spanish form -->
+      <form class="lead-form" data-lang-form="es">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="es-name">Nombre completo</label>
+            <input id="es-name" name="name" type="text" required />
+          </div>
+          <div class="form-field">
+            <label for="es-email">Correo electrónico</label>
+            <input id="es-email" name="email" type="email" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="es-whatsapp">WhatsApp / Teléfono</label>
+            <input id="es-whatsapp" name="whatsapp" type="text" />
+          </div>
+          <div class="form-field">
+            <label for="es-location">Ciudad y país</label>
+            <input id="es-location" name="location" type="text" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="es-times">Horarios preferidos</label>
+            <input id="es-times" name="times" type="text" placeholder="Ej. lunes y miércoles por la tarde" />
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="es-notes">Cuéntanos qué necesitas</label>
+          <textarea id="es-notes" name="needs" placeholder="Inglés general, entrevistas, reuniones, traducción, etc."></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn btn-outline modal-cancel">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Enviar solicitud</button>
+        </div>
+        <p class="form-note">
+          No realizamos cargos automáticos. Te responderemos con horarios propuestos y un enlace de pago seguro.
+        </p>
+      </form>
+
+      <!-- English form -->
+      <form class="lead-form" data-lang-form="en" style="display:none;">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="en-name">Full name</label>
+            <input id="en-name" name="name" type="text" required />
+          </div>
+          <div class="form-field">
+            <label for="en-email">Email</label>
+            <input id="en-email" name="email" type="email" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="en-whatsapp">WhatsApp / Phone</label>
+            <input id="en-whatsapp" name="whatsapp" type="text" />
+          </div>
+          <div class="form-field">
+            <label for="en-location">City &amp; country</label>
+            <input id="en-location" name="location" type="text" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="en-times">Preferred days/times</label>
+            <input id="en-times" name="times" type="text" placeholder="e.g. Mon & Wed evenings" />
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="en-notes">Tell us what you need</label>
+          <textarea id="en-notes" name="needs" placeholder="General English, interviews, meetings, translation, etc."></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn btn-outline modal-cancel">Cancel</button>
+          <button type="submit" class="btn btn-primary">Send request</button>
+        </div>
+        <p class="form-note">
+          We won’t charge you automatically. We’ll reply with suggested times and a secure payment link.
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // language toggle logic
+    const langButtons = document.querySelectorAll('[data-lang-switch]');
+    const mains = document.querySelectorAll('main[data-lang]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const footerBits = document.querySelectorAll('[data-lang-footer]');
+    const modalTitles = document.querySelectorAll('[data-lang-modal]');
+    const bookingModal = document.getElementById('booking-modal');
+    const modalForms = bookingModal.querySelectorAll('form[data-lang-form]');
+
+    // Map nav links to section IDs, in order
+    const sectionIds = ['programs', 'conversation', 'translation', 'contact'];
+    navLinks.forEach((link, index) => {
+      if (sectionIds[index]) {
+        link.dataset.section = sectionIds[index];
+      }
+    });
+
+    function setLanguage(lang) {
+      mains.forEach(main => {
+        main.style.display = (main.dataset.lang === lang) ? '' : 'none';
+      });
+
+      langButtons.forEach(btn => {
+        const isActive = btn.dataset.langSwitch === lang;
+        btn.classList.toggle('is-active', isActive);
+      });
+
+      document.documentElement.lang = lang;
+
+      navLinks[0].textContent = (lang === 'en') ? 'Programs' : 'Programas';
+      navLinks[1].textContent = (lang === 'en') ? 'Native conversation' : 'Conversación nativa';
+      navLinks[2].textContent = (lang === 'en') ? 'Translation' : 'Traducción';
+      navLinks[3].textContent = (lang === 'en') ? 'Contact' : 'Contacto';
+
+      footerBits.forEach(el => {
+        el.style.display = (el.dataset.langFooter === lang) ? '' : 'none';
+      });
+
+      // Update modal titles & form visibility if modal is open
+      modalTitles.forEach(el => {
+        el.style.display = (el.dataset.langModal === lang) ? '' : 'none';
+      });
+      modalForms.forEach(form => {
+        form.style.display = (form.dataset.langForm === lang) ? '' : 'none';
+      });
+    }
+
+    langButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        setLanguage(btn.dataset.langSwitch);
+      });
+    });
+
+    // NAV: smooth scroll to the active language section
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const lang = document.documentElement.lang || 'es';
+        const sectionId = link.dataset.section;
+        const activeMain = document.querySelector(`main[data-lang="${lang}"]`);
+        if (!activeMain || !sectionId) return;
+        const target = activeMain.querySelector(`#${sectionId}`);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Modal open/close helpers
+    function openBookingModal() {
+      const lang = document.documentElement.lang || 'es';
+      bookingModal.style.display = 'flex';
+      bookingModal.setAttribute('aria-hidden', 'false');
+
+      modalTitles.forEach(el => {
+        el.style.display = (el.dataset.langModal === lang) ? '' : 'none';
+      });
+      modalForms.forEach(form => {
+        form.style.display = (form.dataset.langForm === lang) ? '' : 'none';
+      });
+    }
+
+    function closeBookingModal() {
+      bookingModal.style.display = 'none';
+      bookingModal.setAttribute('aria-hidden', 'true');
+    }
+
+    document.querySelectorAll('.book-btn').forEach(btn => {
+      btn.addEventListener('click', openBookingModal);
+    });
+
+    bookingModal.addEventListener('click', (e) => {
+      if (e.target === bookingModal) {
+        closeBookingModal();
+      }
+    });
+
+    bookingModal.querySelectorAll('.modal-close, .modal-cancel').forEach(btn => {
+      btn.addEventListener('click', closeBookingModal);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && bookingModal.style.display === 'flex') {
+        closeBookingModal();
+      }
+    });
+
+    // Form submit -> open email client with filled info
+    modalForms.forEach(form => {
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const lang = document.documentElement.lang || 'es';
+        const data = new FormData(form);
+
+        const name = data.get('name') || '';
+        const email = data.get('email') || '';
+        const whatsapp = data.get('whatsapp') || '';
+        const location = data.get('location') || '';
+        const times = data.get('times') || '';
+        const needs = data.get('needs') || '';
+
+        let subject, body;
+
+        if (lang === 'en') {
+          subject = 'Book a session – HDMIWORX Education';
+          body =
+`Hi HDMIWORX,
+
+I'd like to book an English session. My details are:
+- Name: ${name}
+- Email: ${email}
+- City & country: ${location}
+- WhatsApp / phone: ${whatsapp}
+- Preferred days/times: ${times}
+- Needs (general English, work, interview, translation, etc.): ${needs}
+
+Thank you.`;
+        } else {
+          subject = 'Quiero agendar una sesión – HDMIWORX Educación';
+          body =
+`Hola HDMIWORX,
+
+Me gustaría agendar una sesión de inglés. Mis datos son:
+- Nombre: ${name}
+- Correo electrónico: ${email}
+- Ciudad y país: ${location}
+- WhatsApp / teléfono: ${whatsapp}
+- Horarios preferidos: ${times}
+- Necesidades (inglés general, trabajo, entrevista, traducción, etc.): ${needs}
+
+Gracias.`;
+        }
+
+        const mailto = `mailto:info@hdmiworx.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        window.open(mailto, '_blank');
+
+        form.reset();
+        closeBookingModal();
+      });
+    });
+
+    // default language
+    setLanguage('es');
+  </script>
+</body>
+</html>
